@@ -589,6 +589,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .mono__nr { font-size: 12px; font-variant-numeric: tabular-nums; letter-spacing: .04em; }
 .mono__nr span { color: var(--szary); }
+.mono__wiecej { justify-self: center; }   /* O mnie: link do podstrony o-mnie.html w miejscu dolnego licznika */
 .dalej { justify-self: end; display: inline-flex; align-items: center; gap: 14px; }
 .dalej b { font-size: 11px; font-weight: 700; letter-spacing: .14em; }
 .dalej > span:not(.dalej__kolo) { font-size: 14px; color: var(--jasny); }
@@ -607,6 +608,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .mono__slowo { position: relative; bottom: auto; margin-top: -9vw; font-size: 12.4vw; order: 3; }
   .mono__dol { position: static; order: 4; padding: 28px var(--gutter) 0; grid-template-columns: 1fr auto; }
   .mono__nr { display: none; }
+  .mono__projekty { display: none; }       /* na telefonie zostaje „Więcej o mnie” + DALEJ (też do projektów) */
+  .mono__wiecej { justify-self: start; }
   .dalej > span:not(.dalej__kolo), .dalej b { display: none; }
 }
 
@@ -1127,6 +1130,125 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .stopka__linki { display: flex; flex-wrap: wrap; gap: 6px 24px; }
 .stopka__linki a:hover { color: var(--tekst); }
 .stopka__dol { margin-top: 26px; color: var(--ciemny); font-size: 12px; }
+
+/* =========================================================
+   PODSTRONA O MNIE (o-mnie.html)
+   ========================================================= */
+/* wstęp: tekst po lewej, czarno-biały profil po prawej, wygaszony w tło */
+.omnie-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 0 150px;
+  overflow: hidden;
+}
+.omnie-hero__foto {
+  position: absolute;
+  top: 0; right: 0;
+  width: 60%; height: 100%;
+  object-fit: cover;
+  object-position: 35% 20%;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 40%), linear-gradient(to top, transparent 2%, #000 40%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 40%), linear-gradient(to top, transparent 2%, #000 40%);
+  mask-composite: intersect;
+}
+.omnie-hero__tresc { position: relative; z-index: 2; }
+.omnie-hero__h1 {
+  font-family: var(--szeroki);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: clamp(56px, 9vw, 170px);
+  line-height: .84;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  margin-top: 22px;
+}
+.omnie-hero__lead { max-width: 24em; margin-top: 30px; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.55; color: var(--jasny); }
+.omnie-hero__dol {
+  position: absolute; z-index: 2;
+  left: var(--gutter); right: var(--gutter); bottom: 42px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 14px;
+}
+.omnie-kim { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(30px, 6vw, 100px); }
+.omnie-kim__tekst p { color: var(--szary); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.65; max-width: 36em; }
+.omnie-kim__tekst p + p { margin-top: 20px; }
+.omnie-kim__tekst p:first-child { color: var(--tekst); font-size: clamp(20px, 2vw, 28px); line-height: 1.4; }
+.omnie-kim__tekst .link-strzalka { margin-top: 30px; }
+.omnie-zasady .usluga h3 { margin-bottom: 14px; }
+.omnie-foto { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(12px, 2vw, 24px); }
+.omnie-foto img { width: 100%; height: clamp(320px, 42vw, 620px); object-fit: cover; border-radius: 22px; box-shadow: 0 0 0 1px var(--linia); }
+.omnie-foto img:last-child { object-position: 50% 30%; }
+.omnie-cta { padding-bottom: clamp(110px, 14vw, 180px); }
+@media (max-width: 760px) {
+  .omnie-hero { justify-content: flex-end; padding: 0 0 130px; }
+  .omnie-hero__foto {
+    width: 100%; height: 70%;
+    object-position: 40% 15%;
+    -webkit-mask-image: linear-gradient(to top, transparent, #000 45%);
+    mask-image: linear-gradient(to top, transparent, #000 45%);
+  }
+  .omnie-hero__dol { bottom: 28px; }
+  .omnie-kim { grid-template-columns: 1fr; }
+  .omnie-foto { grid-template-columns: 1fr; }
+  .omnie-foto img { height: auto; aspect-ratio: 4 / 3; }
+  .omnie-foto img:last-child { aspect-ratio: 4 / 5; }
+}
+
+/* =========================================================
+   PODSTRONA NAPISZ (napisz.html) — formularz przez formsubmit.co
+   ========================================================= */
+.napisz { padding: clamp(130px, 14vw, 190px) 0 clamp(100px, 12vw, 160px); }
+.napisz [hidden] { display: none !important; }
+.napisz__siatka { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.napisz__inne { margin: 40px 0 36px; max-width: 26em; }
+.napisz__inne li { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-top: 1px solid var(--linia); font-size: 15px; }
+.napisz__inne li:last-child { border-bottom: 1px solid var(--linia); }
+.napisz__inne span { color: var(--szary); }
+.napisz__inne a:hover { color: #fff; }
+.napisz__form, .napisz__dzieki { padding: clamp(28px, 4vw, 48px); }
+.napisz__form { display: grid; gap: 22px; }
+.pole { display: grid; gap: 9px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.pole label, .pole legend { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--jasny); padding: 0; }
+.pole legend { float: left; width: 100%; margin-bottom: 10px; }
+.pole label i { font-style: normal; font-weight: 500; letter-spacing: .04em; text-transform: none; color: var(--ciemny); }
+.pole input, .pole textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  color: var(--tekst);
+  background: rgba(255, 255, 255, .035);
+  border: 0;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 1px var(--linia-2);
+  padding: 15px 16px;
+  transition: box-shadow .25s, background .25s;
+}
+.pole textarea { min-height: 150px; resize: vertical; line-height: 1.55; }
+.pole input::placeholder, .pole textarea::placeholder { color: var(--ciemny); }
+.pole input:focus, .pole textarea:focus { outline: none; background: rgba(255, 255, 255, .06); box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .75); }
+.chipy { clear: both; display: flex; flex-wrap: wrap; gap: 8px; }
+.pole .chip { position: relative; cursor: pointer; font-size: 14px; font-weight: 500; letter-spacing: 0; text-transform: none; }
+.chip input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.chip span { display: inline-block; padding: 9px 15px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--linia-2); font-size: 14px; color: var(--jasny); transition: background .25s, color .25s, box-shadow .25s; }
+.chip:hover span { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .45); }
+.chip input:checked + span { background: var(--tekst); color: #000; box-shadow: none; }
+.chip input:focus-visible + span { outline: 2px solid #fff; outline-offset: 2px; }
+.napisz__wyslij { justify-self: start; min-width: 220px; }
+.napisz__wyslij:disabled { opacity: .6; cursor: progress; }
+.napisz__status { font-size: 14px; line-height: 1.5; color: var(--jasny); }
+.napisz__status:empty { display: none; }
+.napisz__status a, .napisz__dzieki a:not(.btn) { text-decoration: underline; text-underline-offset: 3px; }
+.napisz__nota { font-size: 12px; color: var(--ciemny); }
+.napisz__miodek { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.napisz__dzieki { display: grid; gap: 16px; align-content: start; }
+.napisz__dzieki h2 { font-family: var(--szeroki); font-stretch: 125%; font-weight: 800; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.05; text-transform: uppercase; }
+.napisz__dzieki p { color: var(--szary); }
+.napisz__dzieki .btn { justify-self: start; margin-top: 10px; }
+@media (max-width: 900px) { .napisz__siatka { grid-template-columns: 1fr; } }
 
 /* =========================================================
    WEJŚCIA PRZY PRZEWIJANIU

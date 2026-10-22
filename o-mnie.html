@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>O mnie — Dawid Webdesign</title>
+<meta name="description" content="Dawid Webdesign: projektuję i koduję strony internetowe dla firm — wszystko sam, od projektu po rezerwacje online.">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Dawid Webdesign — strony internetowe">
+<meta property="og:description" content="Projekt · kod · rezerwacje online. Strony internetowe dla firm.">
+<meta property="og:image" content="img/omnie.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400..600&display=swap" rel="stylesheet">
+<script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
+<link rel="stylesheet" href="style.css?v=31">
+</head>
+<body id="top" class="podstrona">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="chromLuk" x1="0" y1="0" x2="1" y2="1" spreadMethod="reflect">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".16" stop-color="#d4d4d4"/>
+      <stop offset=".34" stop-color="#2b2b2b"/>
+      <stop offset=".47" stop-color="#f4f4f4"/>
+      <stop offset=".6" stop-color="#8a8a8a"/>
+      <stop offset=".76" stop-color="#1c1c1c"/>
+      <stop offset=".9" stop-color="#c8c8c8"/>
+      <stop offset="1" stop-color="#ffffff"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-.5 -.5; .5 .5; -.5 -.5" dur="7s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="chromGwiazda" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".38" stop-color="#b9b9b9"/>
+      <stop offset=".5" stop-color="#ffffff"/>
+      <stop offset=".62" stop-color="#5e5e5e"/>
+      <stop offset="1" stop-color="#e9e9e9"/>
+    </linearGradient>
+    <linearGradient id="chromTecza" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a8dcff"/>
+      <stop offset=".35" stop-color="#ffffff"/>
+      <stop offset=".65" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#d9c2ff"/>
+    </linearGradient>
+    <symbol id="znak" viewBox="0 0 100 100">
+      <path d="M36 16C67 14 88 30 88 50S67 86 36 84C63 78 78 66 78 50S63 22 36 16Z" fill="url(#chromLuk)"/>
+      <path d="M36 16C67 14 88 30 88 50S67 86 36 84C63 78 78 66 78 50S63 22 36 16Z" fill="none" stroke="url(#chromTecza)" stroke-width=".7" opacity=".7"/>
+      <path d="M36 6Q39.5 46 54 50Q39.5 54 36 94Q32.5 54 18 50Q32.5 46 36 6Z" fill="url(#chromGwiazda)"/>
+      <path d="M36 6Q39.5 46 54 50Q39.5 54 36 94Q32.5 54 18 50Q32.5 46 36 6Z" fill="none" stroke="#fff" stroke-width=".5" opacity=".55"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="ziarno" aria-hidden="true"></div>
+
+<!-- ===== NAWIGACJA ===== -->
+<header class="nav" id="nav">
+  <a href="index.html" class="nav__logo"><svg class="logo-znak" aria-hidden="true"><use href="#znak"/></svg>DAWID <span>WEBDESIGN</span></a>
+  <nav class="nav__menu" id="menu" aria-label="Menu główne">
+    <a href="o-mnie.html" aria-current="page">O mnie</a>
+    <a href="index.html#realizacje">Projekty</a>
+    <a href="index.html#koncepty">Koncepty</a>
+    <a href="index.html#uslugi">Usługi</a>
+    <a href="index.html#proces">Proces</a>
+    <a href="index.html#kontakt">Kontakt</a>
+  </nav>
+  <div class="nav__prawo">
+    <a class="nav__ikona" href="https://www.instagram.com/dawid_webdesign/" target="_blank" rel="noopener" aria-label="Instagram @dawid_webdesign">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle class="pelna" cx="17.3" cy="6.7" r="1.1"/></svg>
+    </a>
+    <a class="nav__ikona" href="https://www.tiktok.com/@dawid_webdesign" target="_blank" rel="noopener" aria-label="TikTok @dawid_webdesign">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="pelna" d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.3 6.3 0 1 0 5.3 6.2V8.6a7.9 7.9 0 0 0 4.4 1.4V6.7a4.6 4.6 0 0 1-4.4-4.7z"/></svg>
+    </a>
+    <button class="nav__kropki" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== O MNIE — wstęp ===== -->
+<section class="omnie-hero">
+  <img class="omnie-hero__foto" src="img/kontakt.jpg" alt="Dawid — czarno-biały portret z profilu" width="1500" height="1500" fetchpriority="high">
+  <div class="wrap omnie-hero__tresc">
+    <p class="licznik wejscie">Dawid Webdesign</p>
+    <h1 class="omnie-hero__h1 wejscie">O mnie</h1>
+    <p class="omnie-hero__lead wejscie">Nazywam się Dawid. Projektuję i&nbsp;koduję strony internetowe dla firm — wszystko sam, od&nbsp;projektu po&nbsp;rezerwacje online.</p>
+  </div>
+  <div class="omnie-hero__dol">
+    <a class="link-strzalka link-strzalka--wstecz" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5M10 7l-5 5 5 5"/></svg> Strona główna</a>
+    <a class="dalej" href="#kim"><b>DALEJ</b><span>Kim jestem</span>
+      <span class="dalej__kolo"><svg class="dalej__pierscien" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5"/><circle class="postep" cx="24" cy="24" r="22.5"/></svg><svg class="dalej__grot" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7l5 5-5 5"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== KIM JESTEM — tylko fakty ze strony; bez zmyślonych liczb i klientów ===== -->
+<section class="sekcja" id="kim">
+  <div class="wrap omnie-kim">
+    <header>
+      <p class="licznik reveal">01 <span>/ 03</span></p>
+      <h2 class="tytul reveal">Kim<br><span class="szary">jestem</span></h2>
+    </header>
+    <div class="omnie-kim__tekst">
+      <p class="reveal">Zajmuję się projektowaniem i&nbsp;tworzeniem stron internetowych dla różnego rodzaju firm. Działam pod nazwą Dawid Webdesign.</p>
+      <p class="reveal">Wszystko robię sam: rozmowę, projekt, kod, publikację i&nbsp;rezerwacje online. Dzięki temu przez cały czas rozmawiasz ze&nbsp;mną i&nbsp;wiesz, co będzie dalej.</p>
+      <p class="reveal">Każdą stronę projektuję od&nbsp;zera, pod konkretną branżę. Teksty piszę na&nbsp;podstawie rozmowy z&nbsp;Tobą — bez zmyślonych obietnic.</p>
+      <p class="reveal">Na&nbsp;stronie głównej zobaczysz projekty pokazowe i&nbsp;koncepty — tak mogłyby wyglądać strony istniejących firm.</p>
+      <a class="link-strzalka reveal" href="index.html#realizacje">Zobacz projekty <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M14 7l5 5-5 5"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JAK PRACUJĘ ===== -->
+<section class="sekcja" id="jak-pracuje">
+  <div class="wrap">
+    <header class="naglowek">
+      <p class="licznik reveal">02 <span>/ 03</span></p>
+      <h2 class="tytul reveal">Jak<br><span class="szary">pracuję</span></h2>
+    </header>
+    <div class="uslugi omnie-zasady chrom-ramka">
+      <div class="usluga reveal">
+        <span class="usluga__nr" aria-hidden="true">01</span>
+        <h3>Jedna osoba</h3>
+        <p class="usluga__opis">Od&nbsp;pierwszej rozmowy po&nbsp;start strony pracujesz ze&nbsp;mną. Nikt nie przekazuje Twojej sprawy dalej.</p>
+      </div>
+      <div class="usluga reveal">
+        <span class="usluga__nr" aria-hidden="true">02</span>
+        <h3>Projekt od&nbsp;zera</h3>
+        <p class="usluga__opis">Strona powstaje pod Twoją branżę i&nbsp;Twoich klientów, a&nbsp;nie z&nbsp;gotowego szablonu.</p>
+      </div>
+      <div class="usluga reveal">
+        <span class="usluga__nr" aria-hidden="true">03</span>
+        <h3>Komputer i&nbsp;telefon</h3>
+        <p class="usluga__opis">Pierwszą wersję pokazuję w&nbsp;przeglądarce — od&nbsp;razu widzisz, jak strona wygląda na&nbsp;komputerze i&nbsp;w&nbsp;telefonie.</p>
+      </div>
+      <div class="usluga reveal">
+        <span class="usluga__nr" aria-hidden="true">04</span>
+        <h3>Po&nbsp;starcie</h3>
+        <p class="usluga__opis">Nadal jestem pod telefonem: nowy cennik, inne godziny, świeże zdjęcia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POZA EKRANEM — zdjęcia Dawida w czerni i bieli ===== -->
+<section class="sekcja">
+  <div class="wrap">
+    <header class="naglowek">
+      <p class="licznik reveal">03 <span>/ 03</span></p>
+      <h2 class="tytul reveal">Poza<br><span class="szary">ekranem</span></h2>
+    </header>
+    <div class="omnie-foto">
+      <img class="reveal" src="img/o-mnie-gory.jpg" alt="Dawid w górach, czarno-białe zdjęcie" width="1500" height="1125" loading="lazy">
+      <img class="reveal" src="img/o-mnie-profil.jpg" alt="Dawid w okularach przeciwsłonecznych, czarno-białe zdjęcie" width="900" height="1600" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="sekcja omnie-cta">
+  <div class="wrap">
+    <h2 class="kontakt__h2 reveal">Porozmawiajmy<br><span class="szary">o&nbsp;Twojej stronie</span></h2>
+    <p class="wstep reveal">Napisz w&nbsp;kilku zdaniach, czym się zajmujesz i&nbsp;czy masz już stronę — odezwę się z&nbsp;pytaniami i&nbsp;wyceną.</p>
+    <div class="kontakt__cta reveal">
+      <a class="btn" href="napisz.html">Napisz do&nbsp;mnie</a>
+      <a class="btn btn--obrys" href="tel:+48504400224">Zadzwoń: 504 400 224</a>
+      <a class="btn btn--obrys" href="https://www.instagram.com/dawid_webdesign/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== STOPKA ===== -->
+<footer class="stopka">
+  <div class="wrap stopka__rzad">
+    <a href="index.html" class="nav__logo"><svg class="logo-znak" aria-hidden="true"><use href="#znak"/></svg>DAWID <span>WEBDESIGN</span></a>
+    <nav class="stopka__linki" aria-label="Kontakt">
+      <a href="tel:+48504400224">504 400 224</a>
+      <a href="napisz.html">kontakt@vizita.pl</a>
+      <a href="https://www.instagram.com/dawid_webdesign/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@dawid_webdesign" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://vizita.pl" target="_blank" rel="noopener">vizita.pl</a>
+    </nav>
+  </div>
+  <p class="wrap stopka__dol">Dawid Webdesign · strony internetowe i&nbsp;rezerwacje online</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="script.js?v=10"></script>
+</body>
+</html>

@@ -25,10 +25,11 @@ Wychodzą: `img/omnie.jpg` (lustro, O mnie), `img/hero-glowa.jpg` (hero: głowa 
 
 ## Realizacje
 
-- 7 klienckich (sekcja Realizacje) + 8 konceptów (taśma Koncepty); zrzuty 1600×1000 w `img/realizacje/`,
+- 7 projektów pokazowych dla istniejących firm (sekcja „Projekty”, id `#realizacje`) + 8 konceptów (taśma Koncepty).
+  ŻADNA strona nie była zamówiona ani sprzedana — nie pisać o „klientach”, „realizacjach” ani „prawdziwych firmach”; zrzuty 1600×1000 w `img/realizacje/`,
   kwadratowe ikony 192 px do pulpitu w `img/ikony/`.
 - Pozycje ikon na pulpicie: `--x/--y` (komputer, luźno wokół napisu) i `--mx/--my` (telefon, siatka 4 kolumn).
-- Zaplecione ma dopisek „strona pokazowa” (tak opisuje ją jej własna strona).
+- Każdy projekt ma etykietę „Projekt pokazowy”.
 
 ## Kontakt
 

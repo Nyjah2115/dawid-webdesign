@@ -21,7 +21,7 @@ Obróbka (czerń-biel, krzywa S, winieta, ziarno, czarne tło):
     python3 narzedzia/foto.py zrodla/foto img
 
 (wymaga numpy + Pillow; systemowy python3 nie ma numpy — użyć venv).
-Wychodzą: `img/omnie.jpg` (lustro, O mnie), `img/profil-rozmyty.jpg` (hero), `img/wskazuje.jpg` (wskazuje na nagłówek Realizacji), `img/kontakt.jpg` (profil w górę, kontakt).
+Wychodzą: `img/omnie.jpg` (lustro, O mnie), `img/hero-glowa.jpg` (hero: głowa z gór, przyciemniona), `img/wskazuje.jpg` (wskazuje na nagłówek Realizacji), `img/kontakt.jpg` (profil w górę, kontakt).
 
 ## Realizacje
 

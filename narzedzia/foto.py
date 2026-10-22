@@ -117,4 +117,20 @@ m = .035 + np.maximum(metal(W, H, 47.0) - 11 / 255, 0) * .5
 yy = np.linspace(0, 1, H)[:, None]; xx = np.linspace(0, 1, W)[None, :]
 m = winieta(m, .8) * (1 - .5 * np.clip((yy - .55) / .45, 0, 1))
 zapisz(ziarno(m, .022), "uslugi-tlo.jpg", q=82)
+# --- HERO: głowa z gór (pod słońce), duża, przyciemniona i lekko zmiękczona — tło pulpitu ---
+rgb = Image.open(f"{wej}/gory.jpg").convert("RGB")
+alfa = Image.open(f"{wej}/gory-maska.png").convert("RGBA").split()[3]
+box = (560, 180, 930, 520)                                   # głowa + szyja + kołnierz
+wyc = Image.merge("RGBA", (*rgb.crop(box).split(), alfa.crop(box)))
+l, a = cz_b(wyc, gamma=.9, czern=.03, biel=.85)
+h0 = a.shape[0]
+a = a * np.clip((box[3] - box[1] - np.arange(h0)[:, None] - 0) / 80, 0, 1)   # kołnierz gaśnie w dół
+W, H = 2400, 1500
+skala = H * .86 / h0
+x = int(W * .5 - l.shape[1] * skala * .5)
+img = na_tlo(l, a, W, H, x, H - int(h0 * skala), skala, tlo=.03, zjedz=1)
+img = np.asarray(Image.fromarray((img * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(5))).astype(np.float32) / 255
+img = .03 + (img - .03) * .58                                 # przyciemnienie
+img = winieta(img, .6)
+zapisz(ziarno(img, .022), "hero-glowa.jpg", q=82)
 print("ok")

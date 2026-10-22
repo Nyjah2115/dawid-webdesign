@@ -759,7 +759,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- usługi: pas MONOCHROME ---------- */
 .sekcja--uslugi { padding-top: clamp(110px, 14vw, 180px); }
 .mono--uslugi { margin-bottom: clamp(80px, 10vw, 130px); }
-.mono--uslugi .mono__slowo { font-size: 18vw; }   /* 6 liter — większe, żeby wypełniały szerokość jak WEBDESIGN */
+/* „USŁUGI” to chromowany napis (obraz z OpenArt, wycięty z czarnego tła) — bez animacji.
+   Rozmiar z szerokości i wysokości pasa (cq), żeby nigdy nie wchodził na opis ani pasek na dole. */
+.mono--uslugi { container-type: size; }
+.mono--uslugi .mono__slowo { bottom: max(12%, 100px); line-height: 0; }   /* pasek na dole ma stałe ~94 px */
+.mono--uslugi .mono__tekst { top: 30%; }
+.mono__chrom { display: inline-block; width: min(84cqw, 86cqh); height: auto; }
 .mono__podtytul {
   font-family: var(--szeroki);
   font-stretch: 125%;
@@ -776,7 +781,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .mono--uslugi .mono__foto { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: 50% 50%; }
   .mono--uslugi .mono__gora { position: absolute; top: 92px; padding: 0; left: var(--gutter); }
   .mono--uslugi .mono__tekst { position: absolute; top: 150px; left: var(--gutter); right: var(--gutter); padding: 0; max-width: none; font-size: 15px; }
-  .mono--uslugi .mono__slowo { position: absolute; top: auto; bottom: 110px; margin: 0; font-size: 17vw; }
+  .mono--uslugi .mono__slowo { position: absolute; top: auto; bottom: 100px; margin: 0; }
+  .mono__chrom { width: 92cqw; }
   .mono--uslugi .mono__dol { position: absolute; bottom: 24px; left: var(--gutter); right: var(--gutter); padding: 0; }
 }
 

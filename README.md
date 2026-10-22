@@ -51,6 +51,12 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   Cen nie podajemy — wycena po rozmowie.
 - „O mnie”: za Dawidem nieruchomy płynny metal, wypalony w `img/omnie.jpg` przez `narzedzia/metal.py`
   (ten sam wzór co shader w `chrom.js`, przeniesiony do numpy; kadr t=72, przygaszony do 60%) — zero kosztu na stronie.
+- Wszystko, co klikalne, jest w stylu chromu (Dawid, 2026-10-22: „chcę wszystko w tym stylu”) — blok „CHROM” na końcu `style.css`:
+  obręcz = lakier w `padding-box` + `var(--chrom)` w `border-box` (w warstwie nad chromem tylko gradienty, nie gołe kolory — inaczej
+  przeglądarka wyrzuca całą regułę; wnętrze ma być pełne, inaczej prześwituje środek gradientu). Główne `.btn` srebrne (`--srebro`),
+  `.btn--obrys`, `.link-strzalka`, stopka, chipy — lakier + obręcz; DALEJ i strzałki — chromowany pierścień; miniatury (pulpit, okno,
+  telefon, koncepty) — chromowana ramka; menu na komputerze — kapsuła, aktywny link srebrny; numer telefonu — chromowane litery.
+  Ikony w przyciskach, menu, stopce i na „Napisz” to `img/dock/*.png` (klasa `.ikona-chrom`).
 - Bez glitchy (Dawid, 2026-10-22: „pousuwaj te animacje glitch wszystkie”). Wielkie „WEBDESIGN” i „REZERWACJE” tylko
   wjeżdżają literami (`data-litery` → `script.js` rozbija na `.l`). Gotowy efekt glitch leży osobno w `../glitch-napis/`.
 - Usługi: pas MONOCHROME (`.mono.mono--uslugi`) — tło `img/uslugi-tlo.jpg` (nieruchomy metal z `metal.py`, t=47)

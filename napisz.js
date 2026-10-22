@@ -6,6 +6,7 @@
   if (!form) return;
   var adres = form.getAttribute("data-adres");
   var przycisk = form.querySelector(".napisz__wyslij");
+  var napis = przycisk.querySelector("span");                   // sam tekst — ikona maila zostaje
   var status = form.querySelector(".napisz__status");
   var dzieki = document.getElementById("dzieki");
 
@@ -27,7 +28,7 @@
     });
 
     przycisk.disabled = true;
-    przycisk.textContent = "Wysyłam…";
+    napis.textContent = "Wysyłam…";
     status.textContent = "";
 
     fetch("https://formsubmit.co/ajax/" + adres, {
@@ -42,7 +43,7 @@
       })
       .catch(function () {
         przycisk.disabled = false;
-        przycisk.textContent = "Wyślij wiadomość";
+        napis.textContent = "Wyślij wiadomość";
         status.innerHTML = "Nie udało się wysłać. Spróbuj jeszcze raz albo napisz bezpośrednio: " +
           '<a href="mailto:' + adres + '">' + adres + "</a>.";
       });

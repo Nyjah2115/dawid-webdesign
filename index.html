@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400..600&display=swap" rel="stylesheet">
 <script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
-<link rel="stylesheet" href="style.css?v=38">
+<link rel="stylesheet" href="style.css?v=39">
 </head>
 <body id="top">
 
@@ -346,21 +346,55 @@
   </div>
 </section>
 
-<!-- ===== PROCES ===== -->
+<!-- ===== PROCES — sześć kroków w chromowanych kafelkach z ikonami (jak Usługi) ===== -->
 <section class="sekcja" id="proces">
-  <div class="wrap proces">
-    <div class="proces__lewo">
-      <p class="licznik reveal">005 <span>/ 006</span></p>
-      <h2 class="tytul reveal">Od rozmowy<br><span class="szary">do startu</span></h2>
-      <p class="wstep reveal">Sześć kroków, bez żargonu. Każdy robię sam, więc przez cały czas rozmawiasz ze&nbsp;mną i&nbsp;wiesz, co będzie dalej.</p>
-    </div>
-    <ol class="kroki" id="kroki">
-      <li class="krok"><span class="krok__nr">01</span><div><h3>Rozmowa</h3><p>Dzwonisz albo piszesz. Opowiadasz, czym się zajmujesz, kto do&nbsp;Ciebie przychodzi i&nbsp;co strona ma załatwić.</p></div></li>
-      <li class="krok"><span class="krok__nr">02</span><div><h3>Materiały</h3><p>Zbieram od&nbsp;Ciebie logo, zdjęcia i&nbsp;informacje o&nbsp;firmie. Nie masz zdjęć? Często wystarczy Instagram — kadry obrabiam pod stronę.</p></div></li>
-      <li class="krok"><span class="krok__nr">03</span><div><h3>Projekt</h3><p>Pokazuję pierwszą wersję w&nbsp;przeglądarce, na&nbsp;komputerze i&nbsp;w telefonie — od&nbsp;razu widzisz, jak to będzie wyglądać.</p></div></li>
-      <li class="krok"><span class="krok__nr">04</span><div><h3>Poprawki</h3><p>Zmieniam to, co ma być inaczej: kolory, kolejność sekcji, teksty — aż strona będzie Twoja.</p></div></li>
-      <li class="krok"><span class="krok__nr">05</span><div><h3>Start</h3><p>Podpinam domenę, publikuję stronę i&nbsp;— jeśli chcesz — uruchamiam rezerwacje online.</p></div></li>
-      <li class="krok"><span class="krok__nr">06</span><div><h3>Opieka</h3><p>Po starcie nadal jestem pod telefonem: nowy cennik, inne godziny, zdjęcia z&nbsp;ostatnich realizacji.</p></div></li>
+  <div class="wrap">
+    <header class="naglowek naglowek--rzad">
+      <div>
+        <p class="licznik reveal">005 <span>/ 006</span></p>
+        <h2 class="tytul reveal">Od rozmowy<br><span class="szary">do startu</span></h2>
+      </div>
+      <div class="naglowek__prawo">
+        <p class="wstep reveal">Sześć kroków, bez żargonu. Każdy robię sam, więc przez cały czas rozmawiasz ze&nbsp;mną i&nbsp;wiesz, co będzie dalej.</p>
+      </div>
+    </header>
+    <ol class="uslugi uslugi--proces chrom-ramka">
+      <li class="usluga reveal">
+        <img class="usluga__ikona" src="img/dock/telefon.png" alt="" width="216" height="216" loading="lazy">
+        <span class="usluga__nr" aria-hidden="true">01</span>
+        <h3>Rozmowa</h3>
+        <p class="usluga__opis">Dzwonisz albo piszesz. Opowiadasz, czym się zajmujesz, kto do&nbsp;Ciebie przychodzi i&nbsp;co strona ma załatwić.</p>
+      </li>
+      <li class="usluga reveal">
+        <img class="usluga__ikona" src="img/dock/folder.png" alt="" width="216" height="216" loading="lazy">
+        <span class="usluga__nr" aria-hidden="true">02</span>
+        <h3>Materiały</h3>
+        <p class="usluga__opis">Zbieram od&nbsp;Ciebie logo, zdjęcia i&nbsp;informacje o&nbsp;firmie. Nie masz zdjęć? Często wystarczy Instagram — kadry obrabiam pod stronę.</p>
+      </li>
+      <li class="usluga reveal">
+        <img class="usluga__ikona" src="img/uslugi/strony.png" alt="" width="240" height="240" loading="lazy">
+        <span class="usluga__nr" aria-hidden="true">03</span>
+        <h3>Projekt</h3>
+        <p class="usluga__opis">Pokazuję pierwszą wersję w&nbsp;przeglądarce, na&nbsp;komputerze i&nbsp;w telefonie — od&nbsp;razu widzisz, jak to będzie wyglądać.</p>
+      </li>
+      <li class="usluga reveal">
+        <img class="usluga__ikona" src="img/uslugi/poprawki.png" alt="" width="240" height="240" loading="lazy">
+        <span class="usluga__nr" aria-hidden="true">04</span>
+        <h3>Poprawki</h3>
+        <p class="usluga__opis">Zmieniam to, co ma być inaczej: kolory, kolejność sekcji, teksty — aż strona będzie Twoja.</p>
+      </li>
+      <li class="usluga reveal">
+        <img class="usluga__ikona" src="img/uslugi/start.png" alt="" width="240" height="240" loading="lazy">
+        <span class="usluga__nr" aria-hidden="true">05</span>
+        <h3>Start</h3>
+        <p class="usluga__opis">Podpinam domenę, publikuję stronę i&nbsp;— jeśli chcesz — uruchamiam rezerwacje online.</p>
+      </li>
+      <li class="usluga reveal">
+        <img class="usluga__ikona" src="img/uslugi/opieka.png" alt="" width="240" height="240" loading="lazy">
+        <span class="usluga__nr" aria-hidden="true">06</span>
+        <h3>Opieka</h3>
+        <p class="usluga__opis">Po starcie nadal jestem pod telefonem: nowy cennik, inne godziny, zdjęcia z&nbsp;ostatnich realizacji.</p>
+      </li>
     </ol>
   </div>
 </section>
@@ -412,7 +446,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-<script src="script.js?v=11"></script>
+<script src="script.js?v=12"></script>
 <script src="chrom.js?v=10"></script>
 </body>
 </html>

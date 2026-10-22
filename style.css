@@ -982,43 +982,20 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .chrom__h2 span:first-child { color: transparent; -webkit-text-stroke: 1.5px rgba(242, 242, 242, .8); }
 
-/* ---------- proces ---------- */
-.proces { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(40px, 6vw, 100px); align-items: start; }
-.proces__lewo { position: sticky; top: 130px; }
-.kroki { position: relative; }
-.kroki::before, .kroki::after {
-  content: "";
-  position: absolute;
-  left: 21px; top: 22px; bottom: 22px;
-  width: 1px;
-  background: var(--linia-2);
+/* ---------- proces: 6 kroków w chromowanej ramce, siatka 3×2 jak Usługi ---------- */
+.uslugi--proces { grid-template-columns: repeat(3, 1fr); }
+.uslugi--proces .usluga:nth-child(3n+1)::before { opacity: 0; }   /* bez pionowej linii na początku rzędu */
+.uslugi--proces .usluga:nth-child(n+4)::after { opacity: .55; }   /* pozioma linia między rzędami */
+@media (max-width: 1000px) {
+  .uslugi--proces { grid-template-columns: 1fr 1fr; }
+  .uslugi--proces .usluga:nth-child(3n+1)::before { opacity: .55; }
+  .uslugi--proces .usluga:nth-child(2n+1)::before { opacity: 0; }
+  .uslugi--proces .usluga:nth-child(n+3)::after { opacity: .55; }
 }
-.kroki::after { background: #fff; bottom: auto; height: calc((100% - 44px) * var(--postep, 0)); }
-.krok {
-  position: relative;
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  gap: 26px;
-  padding: 0 0 clamp(44px, 6vw, 70px);
-  opacity: .3;
-  transition: opacity .6s var(--ease);
+@media (max-width: 600px) {
+  .uslugi--proces { grid-template-columns: 1fr; }
+  .uslugi--proces .usluga:nth-child(n)::before { opacity: 0; }
 }
-.krok:last-child { padding-bottom: 0; }
-.krok.aktywny { opacity: 1; }
-.krok__nr {
-  position: relative; z-index: 1;
-  display: grid; place-items: center;
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--bg);
-  box-shadow: inset 0 0 0 1px var(--linia-2);
-  font-size: 12px; font-variant-numeric: tabular-nums;
-  transition: background .5s var(--ease), color .5s var(--ease), box-shadow .5s var(--ease);
-}
-.krok.aktywny .krok__nr { background: #fff; color: #000; box-shadow: none; }
-.krok h3 { font-family: var(--szeroki); font-stretch: 125%; font-size: clamp(20px, 2vw, 28px); font-weight: 800; text-transform: uppercase; line-height: 1.1; padding-top: 9px; }
-.krok p { margin-top: 10px; color: var(--szary); font-size: 16px; max-width: 30em; }
-@media (max-width: 860px) { .proces { grid-template-columns: 1fr; } .proces__lewo { position: static; } }
 
 /* ---------- kontakt: siedzi na numerze ---------- */
 .kontakt {
@@ -1355,26 +1332,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .chip input:checked + span { color: #0b0b0b; background: var(--srebro) padding-box, var(--chrom) border-box; box-shadow: inset 0 1px 0 #fff; }
 .napisz__inne li > span { display: inline-flex; align-items: center; gap: 10px; }
 .napisz__inne .ikona-chrom { width: 28px; height: 28px; }
-
-/* proces: numery kroków — chromowany pierścień na lakierze, osiągnięty krok srebrny; linia postępu chromowana */
-.krok__nr {
-  border: 1.5px solid transparent;
-  color: var(--jasny);
-  background: radial-gradient(circle at 35% 28%, #2c2c2e, #09090a 72%) padding-box, var(--chrom) border-box;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 8px 20px rgba(0, 0, 0, .5);
-}
-.krok.aktywny .krok__nr {
-  color: #0b0b0b;
-  font-weight: 600;
-  background: var(--srebro) padding-box, var(--chrom) border-box;
-  box-shadow: inset 0 1px 0 #fff, 0 8px 20px rgba(0, 0, 0, .5);
-}
-.kroki::before, .kroki::after { width: 2px; left: 21px; }
-.kroki::before { background: linear-gradient(to bottom, #262626, #474747 50%, #262626); }
-.kroki::after {
-  background: linear-gradient(to bottom, #ffffff, #8a8a8a 22%, #f2f2f2 45%, #6e6e6e 68%, #e6e6e6 90%, #ffffff);
-  box-shadow: 0 0 8px rgba(255, 255, 255, .3);
-}
 
 @media (max-width: 760px) {
   .ik img { border-radius: 7px; }

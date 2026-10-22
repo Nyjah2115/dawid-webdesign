@@ -86,12 +86,10 @@
   }, { threshold: 0.35 });
   monos.forEach(function (m) { obsMono.observe(m); });
 
-  /* ---------- przewijanie: tło, monochrome, kroki ---------- */
+  /* ---------- przewijanie: tło, monochrome ---------- */
   var pulpit = document.getElementById("pulpit");
   var chrom = document.getElementById("chrom");
   var dlonie = document.getElementById("dlonie");
-  var kroki = document.getElementById("kroki");
-  var krokiEl = kroki ? Array.prototype.slice.call(kroki.children) : [];
   var ograniczy = function (v) { return Math.max(0, Math.min(1, v)); };
 
   function przyPrzewijaniu() {
@@ -115,16 +113,6 @@
       var pd = ograniczy((vh * .95 - c.top) / (vh * .8));
       dlonie.style.setProperty("--d", (1 - (1 - Math.pow(1 - pd, 3))).toFixed(4));
       dlonie.classList.toggle("dotyk", pd > .97);
-    }
-
-    if (kroki) {
-      var k = kroki.getBoundingClientRect();
-      var srodek = vh * 0.55;
-      kroki.style.setProperty("--postep", ograniczy((srodek - k.top - 22) / (k.height - 44)).toFixed(4));
-      krokiEl.forEach(function (el) {
-        var nr = el.querySelector(".krok__nr").getBoundingClientRect();
-        el.classList.toggle("aktywny", nr.top + nr.height / 2 < srodek);
-      });
     }
   }
   var czeka = false;

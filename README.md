@@ -51,6 +51,9 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   Cen nie podajemy — wycena po rozmowie.
 - „O mnie”: za Dawidem nieruchomy płynny metal, wypalony w `img/omnie.jpg` przez `narzedzia/metal.py`
   (ten sam wzór co shader w `chrom.js`, przeniesiony do numpy; kadr t=72, przygaszony do 60%) — zero kosztu na stronie.
+- Proces (#proces): 6 kroków w chromowanych kafelkach z ikonami, siatka 3×2 jak Usługi (`.uslugi.uslugi--proces.chrom-ramka`).
+  Dawid nie chciał osi z kółkami (2026-10-22). Ikony: telefon i folder z `img/dock/`, `strony`/`opieka` z Usług, nowe `poprawki`
+  (ołówek) i `start` (rakieta) w `img/uslugi/` — OpenArt Nano Banana 2, image2image na wzór ikon (`zrodla/openart/ikony-proces.png`).
 - Wszystko, co klikalne, jest w stylu chromu (Dawid, 2026-10-22: „chcę wszystko w tym stylu”) — blok „CHROM” na końcu `style.css`:
   obręcz = lakier w `padding-box` + `var(--chrom)` w `border-box` (w warstwie nad chromem tylko gradienty, nie gołe kolory — inaczej
   przeglądarka wyrzuca całą regułę; wnętrze ma być pełne, inaczej prześwituje środek gradientu). Główne `.btn` srebrne (`--srebro`),

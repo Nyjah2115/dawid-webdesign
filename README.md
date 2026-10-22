@@ -25,7 +25,8 @@ Wychodzą: `img/omnie.jpg` (lustro, O mnie), `img/hero-glowa.jpg` (hero: głowa 
 
 ## Realizacje
 
-- 7 projektów pokazowych dla istniejących firm (sekcja „Projekty”, id `#realizacje`) + 8 konceptów (taśma Koncepty).
+- 2 projekty pokazowe dla istniejących firm — Lila Med i Zaplecione (sekcja „Projekty”, id `#realizacje`) + 8 konceptów.
+  MP Caffe, DUL-TRANS, Multi-Tech, Tom-Par i Da Zio usunięte (Dawid, 22.10).
   ŻADNA strona nie była zamówiona ani sprzedana — nie pisać o „klientach”, „realizacjach” ani „prawdziwych firmach”; zrzuty 1600×1000 w `img/realizacje/`,
   kwadratowe ikony 192 px do pulpitu w `img/ikony/`.
 - Pozycje ikon na pulpicie: `--x/--y` (komputer, luźno wokół napisu) i `--mx/--my` (telefon, siatka 4 kolumn).
@@ -54,4 +55,4 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   `script.js` dodaje klasę `.glitch` co 3,2–7 s (czasem dwa razy pod rząd). Wyłączony przy ograniczonym ruchu.
 - Usługi: pas MONOCHROME (`.mono.mono--uslugi`) — tło `img/uslugi-tlo.jpg` (nieruchomy metal z `metal.py`, t=47)
   i wielkie „USŁUGI” (glitch jak na „WEBDESIGN” — oba napisy mają `data-glitch`). Bez postaci (Dawid: usunąć).
-  Lista usług: zamiast ikon obrysowane numery 01–04. Pozostałe stopklatki z filmu: `zrodla/wideo-klatki/gotowe/`.
+  Lista usług: chromowane ikony 3D z OpenArt (`img/uslugi/`, wycięte maską) + mały numer 01–04. Pozostałe stopklatki z filmu: `zrodla/wideo-klatki/gotowe/`.

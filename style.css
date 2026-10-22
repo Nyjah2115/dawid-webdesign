@@ -775,16 +775,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .uslugi { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--linia); }
 .usluga { padding: 40px 28px 0 0; }
 .usluga + .usluga { padding-left: 28px; border-left: 1px solid var(--linia); }
+.usluga__ikona {
+  display: block;
+  width: 108px; height: 108px;
+  object-fit: contain;
+  margin: -8px 0 14px -14px;
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, .6));
+  transition: transform .7s var(--ease);
+}
+.usluga:hover .usluga__ikona { transform: translateY(-4px) rotate(-4deg); }
 .usluga__nr {
   display: block;
-  font-family: var(--szeroki);
-  font-stretch: 125%;
-  font-weight: 800;
-  font-size: clamp(44px, 4.4vw, 64px);
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1.2px rgba(242, 242, 242, .55);
-  margin-bottom: 26px;
+  font-size: 12px;
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ciemny);
+  margin-bottom: 10px;
 }
 .usluga h3 { font-family: var(--szeroki); font-stretch: 125%; font-size: 17px; font-weight: 800; text-transform: uppercase; line-height: 1.15; margin-bottom: 18px; }
 .usluga li { padding: 12px 0; border-top: 1px solid var(--linia); color: var(--szary); font-size: 14px; line-height: 1.45; }

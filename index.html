@@ -11,57 +11,23 @@
 <meta property="og:description" content="Projekt · kod · rezerwacje online. Strony internetowe dla firm.">
 <meta property="og:image" content="img/omnie.jpg">
 <meta property="og:type" content="website">
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400..600&display=swap" rel="stylesheet">
 <script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
-<link rel="stylesheet" href="style.css?v=39">
+<link rel="stylesheet" href="style.css?v=40">
 </head>
 <body id="top">
 
 <!-- Znak Dawid Webdesign: chromowana gwiazda (trzon litery D) + łuk jak orbita (brzuszek D).
      Gradienty żyją tutaj; połysk przesuwa się powoli po metalu (animateTransform). -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="chromLuk" x1="0" y1="0" x2="1" y2="1" spreadMethod="reflect">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset=".16" stop-color="#d4d4d4"/>
-      <stop offset=".34" stop-color="#2b2b2b"/>
-      <stop offset=".47" stop-color="#f4f4f4"/>
-      <stop offset=".6" stop-color="#8a8a8a"/>
-      <stop offset=".76" stop-color="#1c1c1c"/>
-      <stop offset=".9" stop-color="#c8c8c8"/>
-      <stop offset="1" stop-color="#ffffff"/>
-      <animateTransform attributeName="gradientTransform" type="translate" values="-.5 -.5; .5 .5; -.5 -.5" dur="7s" repeatCount="indefinite"/>
-    </linearGradient>
-    <linearGradient id="chromGwiazda" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset=".38" stop-color="#b9b9b9"/>
-      <stop offset=".5" stop-color="#ffffff"/>
-      <stop offset=".62" stop-color="#5e5e5e"/>
-      <stop offset="1" stop-color="#e9e9e9"/>
-    </linearGradient>
-    <linearGradient id="chromTecza" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#a8dcff"/>
-      <stop offset=".35" stop-color="#ffffff"/>
-      <stop offset=".65" stop-color="#ffd2a8"/>
-      <stop offset="1" stop-color="#d9c2ff"/>
-    </linearGradient>
-    <symbol id="znak" viewBox="0 0 100 100">
-      <path d="M36 16C67 14 88 30 88 50S67 86 36 84C63 78 78 66 78 50S63 22 36 16Z" fill="url(#chromLuk)"/>
-      <path d="M36 16C67 14 88 30 88 50S67 86 36 84C63 78 78 66 78 50S63 22 36 16Z" fill="none" stroke="url(#chromTecza)" stroke-width=".7" opacity=".7"/>
-      <path d="M36 6Q39.5 46 54 50Q39.5 54 36 94Q32.5 54 18 50Q32.5 46 36 6Z" fill="url(#chromGwiazda)"/>
-      <path d="M36 6Q39.5 46 54 50Q39.5 54 36 94Q32.5 54 18 50Q32.5 46 36 6Z" fill="none" stroke="#fff" stroke-width=".5" opacity=".55"/>
-    </symbol>
-  </defs>
-</svg>
-
 <div class="ziarno" aria-hidden="true"></div>
 
 <!-- ===== NAWIGACJA ===== -->
 <header class="nav" id="nav">
-  <a href="#top" class="nav__logo"><svg class="logo-znak" aria-hidden="true"><use href="#znak"/></svg>DAWID <span>WEBDESIGN</span></a>
+  <a href="#top" class="nav__logo"><img class="logo-znak" src="img/logo-d.png" alt="" width="122" height="150">DAWID <span>WEBDESIGN</span></a>
   <nav class="nav__menu" id="menu" aria-label="Menu główne">
     <a href="#omnie">O mnie</a>
     <a href="#realizacje">Projekty</a>
@@ -109,9 +75,6 @@
   <nav class="dock wejscie" id="dock" aria-label="Skróty">
     <a class="dock__el dock__el--chrom" href="#realizacje" data-nazwa="Projekty">
       <img src="img/dock/folder.png" alt="" width="216" height="216">
-    </a>
-    <a class="dock__el dock__el--znak" href="#omnie" data-nazwa="Dawid Webdesign">
-      <svg class="logo-znak" aria-hidden="true"><use href="#znak"/></svg>
     </a>
     <a class="dock__el dock__el--chrom" href="rezerwacje.html" data-nazwa="Rezerwacje">
       <img src="img/dock/kalendarz.png" alt="" width="216" height="216">
@@ -433,7 +396,7 @@
 <!-- ===== STOPKA ===== -->
 <footer class="stopka">
   <div class="wrap stopka__rzad">
-    <a href="#top" class="nav__logo"><svg class="logo-znak" aria-hidden="true"><use href="#znak"/></svg>DAWID <span>WEBDESIGN</span></a>
+    <a href="#top" class="nav__logo"><img class="logo-znak" src="img/logo-d.png" alt="" width="122" height="150">DAWID <span>WEBDESIGN</span></a>
     <nav class="stopka__linki" aria-label="Kontakt">
       <a href="tel:+48504400224"><img class="ikona-chrom" src="img/dock/telefon.png" alt="" width="216" height="216" loading="lazy">504 400 224</a>
       <a href="napisz.html"><img class="ikona-chrom" src="img/dock/mail.png" alt="" width="216" height="216" loading="lazy">kontakt@vizita.pl</a>

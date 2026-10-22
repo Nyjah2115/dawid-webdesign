@@ -167,7 +167,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .nav__logo { display: inline-flex; align-items: center; gap: 10px; }
 .nav__logo span { color: var(--szary); margin-left: -.35em; }
-.logo-znak { width: 28px; height: 28px; flex: none; overflow: visible; filter: drop-shadow(0 0 6px rgba(255, 255, 255, .18)); }
+.logo-znak { width: auto; height: 34px; flex: none; filter: drop-shadow(0 0 6px rgba(255, 255, 255, .18)); }   /* chromowane gotyckie „D” (img/logo-d.png) */
 .nav__logo:hover .logo-znak { animation: blysk .9s var(--ease); }
 @keyframes blysk { 40% { transform: rotate(-8deg) scale(1.12); filter: drop-shadow(0 0 10px rgba(255, 255, 255, .5)); } }
 .nav__menu { display: flex; gap: 26px; margin-left: auto; }
@@ -462,10 +462,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .dock__el:hover::before, .dock__el:focus-visible::before { opacity: 1; translate: -50% 0; }
 /* ikonki bez kafelka: same chromowane bryły na szkle docka */
-.dock__el--chrom, .dock__el--znak { background: none; box-shadow: none; overflow: visible; }
+.dock__el--chrom { background: none; box-shadow: none; overflow: visible; }
 .dock__el--chrom img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .55)); }
-.dock__el--znak .logo-znak { width: 46px; height: 46px; stroke: none; fill: initial; }
-@media (max-width: 760px) { .dock__el--znak .logo-znak { width: 37px; height: 37px; } }
 .dock__kreska { width: 1px; height: 46px; margin: 0 3px 3px; background: rgba(255, 255, 255, .2); flex: none; }
 
 @media (max-width: 760px) {

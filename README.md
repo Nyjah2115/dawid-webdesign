@@ -43,8 +43,10 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   przestrzeni + kałuże, odbicia ze studia, lekka tęcza na brzegach).
   Rysuje się tylko, gdy sekcja jest na ekranie. Bez zacinania przy pełnej jakości: nowa klatka liczy się po
   1/6 ekranu na klatkę (pasek po pasku do zapasowej tekstury), a na ekranie przenika się poprzednia i bieżąca. Podgląd samego efektu: `zrodla/test-chrom.html`.
-- Znak (logo): `<symbol id="znak">` na początku `index.html` — chromowana gwiazda jako trzon litery D + łuk jak orbita.
-  Używany przez `<use href="#znak">` w menu, stopce i docku. `img/favicon.svg` to ta sama grafika na czarnym kwadracie.
+- Znak (logo): chromowane gotyckie „D” w stylu „Frozen chrome” (jak napis USŁUGI) — `img/logo-d.png` w menu i stopce
+  wszystkich stron (klasa `.logo-znak`). Wygenerowany w OpenArt (Wan 2.7 Image, standard 2K, wzór: napis USŁUGI), wycięty
+  `narzedzia/wytnij_chrom.py`; oryginał w `zrodla/openart/logo/`. Ikonka strony: `img/favicon.png` + `img/apple-touch-icon.png`.
+  Napis „DAWID” na górze strony głównej celowo zostaje obrysem (Dawid, 2026-10-22). W docku nie ma już znaku (Dawid: usunąć).
 - Kalendarz vizita.pl ma zarezerwowane 1060 px wysokości, bo iframe dorasta po wczytaniu (inaczej strona pod nim skakała).
 - Kontakt „Porozmawiajmy o cenie”: Dawid (wycięty z `zrodla/foto/gory.jpg`, `img/siedzi.webp`) siedzi na wielkim numerze
   telefonu. Siedzisko leży na 80,4% wysokości zdjęcia — `top` w `.kontakt__siedzi` liczy się z `--h`; poprawka w `--siedzisko`.

@@ -60,6 +60,8 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   `.btn--obrys`, `.link-strzalka`, stopka, chipy — lakier + obręcz; DALEJ i strzałki — chromowany pierścień; miniatury (pulpit, okno,
   telefon, koncepty) — chromowana ramka; menu na komputerze — kapsuła, aktywny link srebrny; numer telefonu — chromowane litery.
   Ikony w przyciskach, menu, stopce i na „Napisz” to `img/dock/*.png` (klasa `.ikona-chrom`).
+  `img/dock/instagram.png` to logo IG (kwadrat, koło, kropka) złożone z ikony aparatu: rogi i rant z oryginału
+  (`zrodla/ikony-chrom/instagram-aparat.png`), koło narysowane jako chromowana rurka — Dawid: „wygląda jak zwykły aparat, nie IG”.
 - Bez glitchy (Dawid, 2026-10-22: „pousuwaj te animacje glitch wszystkie”). Wielkie „WEBDESIGN” i „REZERWACJE” tylko
   wjeżdżają literami (`data-litery` → `script.js` rozbija na `.l`). Gotowy efekt glitch leży osobno w `../glitch-napis/`.
 - Usługi: pas MONOCHROME (`.mono.mono--uslugi`) — tło `img/uslugi-tlo.jpg` (nieruchomy metal z `metal.py`, t=47)

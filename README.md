@@ -59,7 +59,8 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   wycięty z czarnego tła: tło = czerń połączona z krawędzią obrazu, poświata iskier zostaje jako biel z alfą.
   Rozmiar w jednostkach `cq` pasa (`min(84cqw, 86cqh)`), dół `max(12%, 100px)` — nie wchodzi na opis ani pasek na dole. Bez postaci (Dawid: usunąć).
   Lista usług: chromowane ikony 3D z OpenArt (`img/uslugi/`, wycięte maską) + mały numer 01–04. Pozostałe stopklatki z filmu: `zrodla/wideo-klatki/gotowe/`.
-- Podstrona `o-mnie.html` (link „Więcej o mnie” w dolnym pasku sekcji O mnie, w miejscu licznika 001/006; na telefonie zamiast
+- Podstrona `o-mnie.html` (link „Więcej o mnie” z chromowaną ikoną profilu `img/uslugi/o-mnie.png` — OpenArt Nano Banana 2,
+  image2image na wzór ikon folderu, maila i tarczy; w dolnym pasku sekcji O mnie, w miejscu licznika 001/006; na telefonie zamiast
   „Zobacz projekty”): wstęp z `img/kontakt.jpg`, „Kim jestem”, „Jak pracuję” (4 zasady w `.chrom-ramka`), „Poza ekranem”
   (`img/o-mnie-gory.jpg`, `img/o-mnie-profil.jpg` — cz.-b. z ziarnem, z `zrodla/foto/`) i CTA. Tylko fakty, które są na stronie —
   żadnych lat doświadczenia, liczb ani klientów. Dawid może dopisać coś o sobie (wiek, miasto, jak zaczął).

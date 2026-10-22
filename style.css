@@ -549,10 +549,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .mono__nr { font-size: 12px; font-variant-numeric: tabular-nums; letter-spacing: .04em; }
 .mono__nr span { color: var(--szary); }
-/* O mnie: link do podstrony o-mnie.html w miejscu dolnego licznika — chromowana ikona jak w docku i Usługach */
-.mono__wiecej { justify-self: center; display: inline-flex; align-items: center; gap: 12px; font-size: 14px; }
-.mono__wiecej img { width: 50px; height: 50px; filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .6)); transition: transform .6s var(--ease); }
-.mono__wiecej:hover img { transform: translateY(-3px) rotate(-5deg); }
+/* O mnie: kafelek z chromowaną ikoną (jak zajawka rezerwacji) w miejscu dolnego licznika → o-mnie.html */
+.mono__wiecej { justify-self: center; display: inline-flex; align-items: center; gap: 14px; padding: 8px 20px 8px 10px; border-radius: 20px; }
+.mono__wiecej.chrom-ramka { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), inset 0 0 0 4px rgba(0, 0, 0, .55), inset 0 0 0 5px rgba(255, 255, 255, .07), 0 16px 40px rgba(0, 0, 0, .6); }
+.mono__wiecej.chrom-ramka::after { top: -10px; right: 34px; width: 20px; height: 20px; }
+.mono__wiecej img { width: 40px; height: 40px; flex: none; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .6)); transition: transform .6s var(--ease); }
+.mono__wiecej:hover img { transform: translateY(-2px) rotate(-5deg); }
+.mono__wiecej-tekst { display: flex; flex-direction: column; gap: 3px; line-height: 1.2; }
+.mono__wiecej-tekst b { font-family: var(--szeroki); font-stretch: 125%; font-weight: 800; font-size: 12.5px; letter-spacing: .02em; text-transform: uppercase; }
+.mono__wiecej-tekst span { font-size: 12.5px; color: var(--szary); }
+.mono__wiecej svg { width: 18px; height: 18px; flex: none; margin-left: 6px; fill: none; stroke: currentColor; stroke-width: 1.6; transition: transform .4s var(--ease); }
+.mono__wiecej:hover svg { transform: translateX(3px); }
+@media (min-width: 761px) { #omnie .mono__slowo { bottom: max(15%, 108px); } }   /* kafelek w pasku jest wyższy niż sam link — napis nie wchodzi pod niego */
 .dalej { justify-self: end; display: inline-flex; align-items: center; gap: 14px; }
 .dalej b { font-size: 11px; font-weight: 700; letter-spacing: .14em; }
 .dalej > span:not(.dalej__kolo) { font-size: 14px; color: var(--jasny); }

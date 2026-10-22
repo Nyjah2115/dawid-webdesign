@@ -1125,9 +1125,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .omnie-kim__tekst p:first-child { color: var(--tekst); font-size: clamp(20px, 2vw, 28px); line-height: 1.4; }
 .omnie-kim__tekst .link-strzalka { margin-top: 30px; }
 .omnie-zasady .usluga h3 { margin-bottom: 14px; }
-.omnie-foto { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(12px, 2vw, 24px); }
-.omnie-foto img { width: 100%; height: clamp(320px, 42vw, 620px); object-fit: cover; border-radius: 22px; box-shadow: 0 0 0 1px var(--linia); }
-.omnie-foto img:last-child { object-position: 50% 30%; }
 .omnie-cta { padding-bottom: clamp(110px, 14vw, 180px); }
 @media (max-width: 760px) {
   .omnie-hero { justify-content: flex-end; padding: 0 0 130px; }
@@ -1139,9 +1136,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   }
   .omnie-hero__dol { bottom: 28px; }
   .omnie-kim { grid-template-columns: 1fr; }
-  .omnie-foto { grid-template-columns: 1fr; }
-  .omnie-foto img { height: auto; aspect-ratio: 4 / 3; }
-  .omnie-foto img:last-child { aspect-ratio: 4 / 5; }
 }
 
 /* =========================================================

@@ -74,8 +74,8 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   Lista usług: chromowane ikony 3D z OpenArt (`img/uslugi/`, wycięte maską) + mały numer 01–04. Pozostałe stopklatki z filmu: `zrodla/wideo-klatki/gotowe/`.
 - Podstrona `o-mnie.html` (link „Więcej o mnie” z chromowaną ikoną profilu `img/uslugi/o-mnie.png` — OpenArt Nano Banana 2,
   image2image na wzór ikon folderu, maila i tarczy; w dolnym pasku sekcji O mnie, w miejscu licznika 001/006; na telefonie zamiast
-  „Zobacz projekty”): wstęp z `img/kontakt.jpg`, „Kim jestem”, „Jak pracuję” (4 zasady w `.chrom-ramka`), „Poza ekranem”
-  (`img/o-mnie-gory.jpg`, `img/o-mnie-profil.jpg` — cz.-b. z ziarnem, z `zrodla/foto/`) i CTA. Tylko fakty, które są na stronie —
+  „Zobacz projekty”): wstęp z `img/kontakt.jpg`, „Kim jestem”, „Jak pracuję” (4 zasady w `.chrom-ramka`) i CTA.
+  Sekcję „Poza ekranem” (zdjęcia z gór i w okularach) Dawid kazał usunąć (2026-10-22). Tylko fakty, które są na stronie —
   żadnych lat doświadczenia, liczb ani klientów. Dawid może dopisać coś o sobie (wiek, miasto, jak zaczął).
 - Podstrona `napisz.html` + `napisz.js`: formularz przez formsubmit.co (AJAX, bez przeładowania; bez JS — zwykły POST i powrót
   na `napisz.html?wyslano=1`). Adres skrzynki w DWÓCH miejscach na `<form id="formularz">`: `action` i `data-adres`.

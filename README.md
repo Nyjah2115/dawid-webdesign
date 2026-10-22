@@ -51,14 +51,14 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   Cen nie podajemy — wycena po rozmowie.
 - „O mnie”: za Dawidem nieruchomy płynny metal, wypalony w `img/omnie.jpg` przez `narzedzia/metal.py`
   (ten sam wzór co shader w `chrom.js`, przeniesiony do numpy; kadr t=72, przygaszony do 60%) — zero kosztu na stronie.
-- Glitch na „WEBDESIGN”: `::before`/`::after` z `data-tekst` (biała i czarna kopia — bez koloru) cięte `clip-path` na plastry;
-  `script.js` dodaje klasę `.rwie` co 3,2–7 s (czasem dwa razy pod rząd). Wyłączony przy ograniczonym ruchu.
-- Glitch na „DAWID WEBDESIGN” w hero: `glitch.css` + `glitch.js` (kopia z `../glitch-napis/`, tam demo i instrukcja).
-  Losowe wycinki co 1,5–4,5 s, obie linie naraz (`data-glitch-grupa="hero"`). Tryb `.glitch--foto`, bo pod napisem
-  jest zdjęcie: przesunięty pas odwraca się na literach (`mix-blend-mode: difference`) zamiast zasłaniać tło.
-  „DAWID” to sam obrys, więc ma własny `--glitch-kolor`. Klasa `.glitch` należy tylko do tego efektu — stary glitch ma `.rwie`.
+- Glitch na „WEBDESIGN” w O mnie: `glitch.css` + `glitch.js` (kopia z `../glitch-napis/`, tam demo i instrukcja).
+  Losowe wycinki co 3–6,5 s, tryb `.glitch--foto` (pod napisem zdjęcie), jaśniejsze wycinki, bo napis jest półprzezroczysty;
+  nie odpala przed wejściem liter (`.mono.widac`). Hero „DAWID WEBDESIGN” celowo BEZ efektu (Dawid, 2026-10-22).
+- Stary glitch na „USŁUGI” i „REZERWACJE”: `::before`/`::after` z `data-tekst` (biała i czarna kopia — bez koloru) cięte
+  `clip-path` na plastry; `script.js` dodaje klasę `.rwie` co 3,2–7 s (czasem dwa razy pod rząd), pomija napisy z `.glitch`.
+  Wyłączony przy ograniczonym ruchu.
 - Usługi: pas MONOCHROME (`.mono.mono--uslugi`) — tło `img/uslugi-tlo.jpg` (nieruchomy metal z `metal.py`, t=47)
-  i wielkie „USŁUGI” (glitch jak na „WEBDESIGN” — oba napisy mają `data-glitch`). Bez postaci (Dawid: usunąć).
+  i wielkie „USŁUGI” (stary glitch `.rwie`; `data-glitch` = rozbicie na litery do wejścia). Bez postaci (Dawid: usunąć).
   Lista usług: chromowane ikony 3D z OpenArt (`img/uslugi/`, wycięte maską) + mały numer 01–04. Pozostałe stopklatki z filmu: `zrodla/wideo-klatki/gotowe/`.
 - Rezerwacje vizita.pl mają własną podstronę `rezerwacje.html` (pas MONOCHROME „REZERWACJE”, „Jak to działa” w 3 krokach,
   demo kalendarza, CTA). Na stronie głównej pod usługami tylko zajawka `.rez-zajawka`; strona główna nie ładuje już embed.js.

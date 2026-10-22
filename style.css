@@ -304,7 +304,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .pulpit__h1 span:first-child {
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(242, 242, 242, .75);
-  --glitch-kolor: rgba(242, 242, 242, .75);   /* sam obrys — odwrócony pas glitcha potrzebuje własnego koloru */
 }
 .pulpit__h1 span:last-child { color: rgba(242, 242, 242, .94); }
 .pulpit__lead {
@@ -534,15 +533,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .mono__litery { display: inline-block; position: relative; }
 /* glitch: biała i czarna kopia napisu, cięte na poziome plastry i przesuwane na boki — bez koloru */
-.mono__litery::before, .mono__litery::after {
+.mono__litery:not(.glitch)::before, .mono__litery:not(.glitch)::after {
   content: attr(data-tekst);
   position: absolute;
   inset: 0;
   opacity: 0;
   pointer-events: none;
 }
-.mono__litery::before { color: rgba(255, 255, 255, .78); }   /* jasne plastry */
-.mono__litery::after { color: var(--bg); }                    /* czarne plastry wycinają kawałki napisu */
+.mono__litery:not(.glitch)::before { color: rgba(255, 255, 255, .78); }   /* jasne plastry */
+.mono__litery:not(.glitch)::after { color: var(--bg); }                    /* czarne plastry wycinają kawałki napisu */
+/* nowy glitch (glitch.js) na „WEBDESIGN” w O mnie: napis jest półprzezroczysty, więc wycinki dostają jaśniejszy kolor */
+.mono__litery.glitch { --glitch-kolor: rgba(230, 230, 230, .9); }
+.mono__litery.glitch::before { color: rgba(235, 235, 235, .85); }
+.mono:not(.widac) .mono__litery.glitch::before, .mono:not(.widac) .mono__litery.glitch::after { display: none; }   /* nie przed wejściem liter */
 .mono__litery.rwie { animation: drgnij .46s steps(1) both; }
 .mono__litery.rwie::before { animation: glitchA .46s steps(1) both; }
 .mono__litery.rwie::after { animation: glitchB .46s steps(1) both; }

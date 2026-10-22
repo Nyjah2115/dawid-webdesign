@@ -100,7 +100,9 @@
     }
     setTimeout(function () { glitch(sl); }, 3200 + Math.random() * 3800);
   }
-  if (!cichy) slowa.forEach(function (sl, i) { setTimeout(function () { glitch(sl); }, 2800 + i * 1300); });
+  // „WEBDESIGN” w O mnie ma nowy glitch (glitch.js) — stary rytm tylko dla pozostałych napisów
+  var stare = slowa.filter(function (sl) { return !sl.classList.contains("glitch"); });
+  if (!cichy) stare.forEach(function (sl, i) { setTimeout(function () { glitch(sl); }, 2800 + i * 1300); });
 
   /* ---------- przewijanie: tło, monochrome, kroki ---------- */
   var pulpit = document.getElementById("pulpit");

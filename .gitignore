@@ -1,6 +1,4 @@
 zrodla/
 .DS_Store
-# nieużywane na stronie (stare zdjęcie do kontaktu, generuje je narzedzia/foto.py)
-img/kontakt.jpg
 # nieużywane na stronie (generuje je narzedzia/foto.py)
 img/profil-rozmyty.jpg

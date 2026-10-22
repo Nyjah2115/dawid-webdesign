@@ -762,9 +762,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* „USŁUGI” to chromowany napis (obraz z OpenArt, wycięty z czarnego tła) — bez animacji.
    Rozmiar z szerokości i wysokości pasa (cq), żeby nigdy nie wchodził na opis ani pasek na dole. */
 .mono--uslugi { container-type: size; }
-.mono--uslugi .mono__slowo { bottom: max(12%, 100px); line-height: 0; }   /* pasek na dole ma stałe ~94 px */
-.mono--uslugi .mono__tekst { top: 30%; }
-.mono__chrom { display: inline-block; width: min(84cqw, 86cqh); height: auto; }
+/* napis na środku pasa, opis zjeżdża na dół w lewo — nad „Zobacz zakres” (pasek na dole ma stałe ~94 px) */
+.mono--uslugi .mono__slowo { top: 44%; bottom: auto; translate: 0 -50%; line-height: 0; }
+.mono--uslugi .mono__tekst { top: auto; bottom: 120px; }
+.mono__chrom { display: inline-block; width: min(84cqw, 84cqh); height: auto; }
 .mono__podtytul {
   font-family: var(--szeroki);
   font-stretch: 125%;
@@ -780,8 +781,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .mono--uslugi { display: block; height: 100svh; min-height: 640px; padding: 0; }
   .mono--uslugi .mono__foto { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: 50% 50%; }
   .mono--uslugi .mono__gora { position: absolute; top: 92px; padding: 0; left: var(--gutter); }
-  .mono--uslugi .mono__tekst { position: absolute; top: 150px; left: var(--gutter); right: var(--gutter); padding: 0; max-width: none; font-size: 15px; }
-  .mono--uslugi .mono__slowo { position: absolute; top: auto; bottom: 100px; margin: 0; }
+  .mono--uslugi .mono__tekst { position: absolute; top: 150px; bottom: auto; left: var(--gutter); right: var(--gutter); padding: 0; max-width: none; font-size: 15px; }
+  .mono--uslugi .mono__slowo { position: absolute; top: calc(50% + 75px); bottom: auto; margin: 0; }   /* środek wolnego miejsca pod opisem */
   .mono__chrom { width: 92cqw; }
   .mono--uslugi .mono__dol { position: absolute; bottom: 24px; left: var(--gutter); right: var(--gutter); padding: 0; }
 }

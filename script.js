@@ -89,10 +89,10 @@
   function glitch(sl) {
     var pas = sl.closest(".mono");
     function raz() {
-      sl.classList.remove("glitch");
+      sl.classList.remove("rwie");
       void sl.offsetWidth;                           // restart animacji
-      sl.classList.add("glitch");
-      setTimeout(function () { sl.classList.remove("glitch"); }, 480);
+      sl.classList.add("rwie");
+      setTimeout(function () { sl.classList.remove("rwie"); }, 480);
     }
     if (!document.hidden && pas.classList.contains("widac")) {
       raz();

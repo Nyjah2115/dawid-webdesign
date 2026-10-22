@@ -52,7 +52,11 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
 - „O mnie”: za Dawidem nieruchomy płynny metal, wypalony w `img/omnie.jpg` przez `narzedzia/metal.py`
   (ten sam wzór co shader w `chrom.js`, przeniesiony do numpy; kadr t=72, przygaszony do 60%) — zero kosztu na stronie.
 - Glitch na „WEBDESIGN”: `::before`/`::after` z `data-tekst` (biała i czarna kopia — bez koloru) cięte `clip-path` na plastry;
-  `script.js` dodaje klasę `.glitch` co 3,2–7 s (czasem dwa razy pod rząd). Wyłączony przy ograniczonym ruchu.
+  `script.js` dodaje klasę `.rwie` co 3,2–7 s (czasem dwa razy pod rząd). Wyłączony przy ograniczonym ruchu.
+- Glitch na „DAWID WEBDESIGN” w hero: `glitch.css` + `glitch.js` (kopia z `../glitch-napis/`, tam demo i instrukcja).
+  Losowe wycinki co 1,5–4,5 s, obie linie naraz (`data-glitch-grupa="hero"`). Tryb `.glitch--foto`, bo pod napisem
+  jest zdjęcie: przesunięty pas odwraca się na literach (`mix-blend-mode: difference`) zamiast zasłaniać tło.
+  „DAWID” to sam obrys, więc ma własny `--glitch-kolor`. Klasa `.glitch` należy tylko do tego efektu — stary glitch ma `.rwie`.
 - Usługi: pas MONOCHROME (`.mono.mono--uslugi`) — tło `img/uslugi-tlo.jpg` (nieruchomy metal z `metal.py`, t=47)
   i wielkie „USŁUGI” (glitch jak na „WEBDESIGN” — oba napisy mają `data-glitch`). Bez postaci (Dawid: usunąć).
   Lista usług: chromowane ikony 3D z OpenArt (`img/uslugi/`, wycięte maską) + mały numer 01–04. Pozostałe stopklatki z filmu: `zrodla/wideo-klatki/gotowe/`.

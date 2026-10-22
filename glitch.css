@@ -1,0 +1,72 @@
+/* =========================================================
+   Glitch — monochromatyczny efekt na napisie
+   Bez kolorów RGB: tylko kolor napisu, kolor tła i ich półtony.
+   Wymaga glitch.js (losuje wycinki przy każdym „wybuchu”).
+
+   Użycie:  <h1 class="glitch">TWÓJ NAPIS</h1>
+   Napis na zdjęciu / gradiencie:  class="glitch glitch--foto"
+   Ustawienia (CSS, na elemencie lub rodzicu):
+     --glitch-tlo:   kolor tła pod napisem (jasna strona → #fff)
+     --glitch-sila:  0.5 subtelnie · 1 normalnie · 2 mocno
+     --glitch-kolor: kolor odwróconego pasa (domyślnie kolor napisu;
+                     ustaw przy napisie z samym obrysem)
+   ========================================================= */
+
+.glitch {
+  --glitch-tlo: #0b0b0b;
+  --glitch-sila: 1;
+  position: relative;
+}
+:where(span, a, strong, em, b).glitch { display: inline-block; }
+
+/* Dwie kopie napisu, schowane do czasu wybuchu */
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  content: attr(data-text) / "";
+  position: absolute;
+  inset: 0;
+  padding: inherit;
+  white-space: pre-line;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Rozdarcie — pas napisu przesunięty w bok, zakrywa oryginał kolorem tła */
+.glitch::before {
+  background: var(--glitch-tlo);
+  box-shadow: 0 0 0 .6em var(--glitch-tlo);
+  clip-path: inset(var(--g1, 100% 0 0 0));
+  translate: calc(var(--g1-x, 0em) * var(--glitch-sila)) 0;
+}
+
+/* Odwrócony pas — tło w kolorze napisu, litery w kolorze tła */
+.glitch::after {
+  background: var(--glitch-kolor, currentColor);
+  -webkit-text-fill-color: var(--glitch-tlo);
+  text-shadow: none;
+  box-shadow: 0 0 0 .08em var(--glitch-kolor, currentColor);
+  clip-path: inset(var(--g2, 100% 0 0 0));
+  translate: calc(var(--g2-x, 0em) * var(--glitch-sila)) 0;
+}
+
+/* Zdjęcie / gradient pod napisem: pas nie zasłania tła, tylko odwraca się na literach */
+.glitch--foto::before {
+  background: none;
+  box-shadow: none;
+  mix-blend-mode: difference;
+}
+
+/* Podczas wybuchu: drgnięcie, szary cień, mignięcie */
+.glitch.is-glitch {
+  translate: calc(var(--g-x, 0em) * var(--glitch-sila)) 0;
+  text-shadow: calc(var(--g-cien, 0em) * var(--glitch-sila)) 0 color-mix(in srgb, currentColor 40%, transparent);
+  opacity: var(--g-op, 1);
+}
+.glitch.is-glitch::before,
+.glitch.is-glitch::after { visibility: visible; }
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch::before,
+  .glitch::after { display: none; }
+}

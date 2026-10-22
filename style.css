@@ -542,9 +542,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .mono__litery:not(.glitch)::before { color: rgba(255, 255, 255, .78); }   /* jasne plastry */
 .mono__litery:not(.glitch)::after { color: var(--bg); }                    /* czarne plastry wycinają kawałki napisu */
-/* nowy glitch (glitch.js) na „WEBDESIGN” w O mnie: napis jest półprzezroczysty, więc wycinki dostają jaśniejszy kolor */
-.mono__litery.glitch { --glitch-kolor: rgba(230, 230, 230, .9); }
-.mono__litery.glitch::before { color: rgba(235, 235, 235, .85); }
+/* nowy glitch (glitch.js) na „WEBDESIGN” w O mnie: napis jest półprzezroczysty, więc wycinki są jasne i pełne,
+   a przesunięcia mocniejsze — inaczej efekt ginie na zdjęciu */
+.mono__litery.glitch { --glitch-kolor: rgba(235, 235, 235, .92); --glitch-sila: 1.6; }
+.mono__litery.glitch::before { color: rgba(240, 240, 240, .9); mix-blend-mode: normal; }
 .mono:not(.widac) .mono__litery.glitch::before, .mono:not(.widac) .mono__litery.glitch::after { display: none; }   /* nie przed wejściem liter */
 .mono__litery.rwie { animation: drgnij .46s steps(1) both; }
 .mono__litery.rwie::before { animation: glitchA .46s steps(1) both; }

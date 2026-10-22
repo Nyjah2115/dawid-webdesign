@@ -52,8 +52,8 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
 - „O mnie”: za Dawidem nieruchomy płynny metal, wypalony w `img/omnie.jpg` przez `narzedzia/metal.py`
   (ten sam wzór co shader w `chrom.js`, przeniesiony do numpy; kadr t=72, przygaszony do 60%) — zero kosztu na stronie.
 - Glitch na „WEBDESIGN” w O mnie: `glitch.css` + `glitch.js` (kopia z `../glitch-napis/`, tam demo i instrukcja).
-  Losowe wycinki co 3–6,5 s, tryb `.glitch--foto` (pod napisem zdjęcie), jaśniejsze wycinki, bo napis jest półprzezroczysty;
-  nie odpala przed wejściem liter (`.mono.widac`). Hero „DAWID WEBDESIGN” celowo BEZ efektu (Dawid, 2026-10-22).
+  Losowe wycinki co 1,8–4 s, pierwszy zaraz po wejściu liter (`script.js`, obserwator `.mono`), nie wcześniej (`.mono.widac`).
+  Napis jest półprzezroczysty, więc wycinki są jasne i pełne (bez `difference`), `--glitch-sila: 1.6` — słabszy ginął na zdjęciu. Hero „DAWID WEBDESIGN” celowo BEZ efektu (Dawid, 2026-10-22).
 - Stary glitch na „USŁUGI” i „REZERWACJE”: `::before`/`::after` z `data-tekst` (biała i czarna kopia — bez koloru) cięte
   `clip-path` na plastry; `script.js` dodaje klasę `.rwie` co 3,2–7 s (czasem dwa razy pod rząd), pomija napisy z `.glitch`.
   Wyłączony przy ograniczonym ruchu.

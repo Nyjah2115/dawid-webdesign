@@ -80,7 +80,12 @@
   var monos = Array.prototype.slice.call(document.querySelectorAll(".mono"));
   var obsMono = new IntersectionObserver(function (wpisy) {
     wpisy.forEach(function (w) {
-      if (w.isIntersecting) { w.target.classList.add("widac"); obsMono.unobserve(w.target); }
+      if (!w.isIntersecting) return;
+      w.target.classList.add("widac");
+      obsMono.unobserve(w.target);
+      // nowy glitch: pierwszy wybuch zaraz po tym, jak litery wjadą
+      var g = w.target.querySelector(".mono__litery.glitch");
+      if (g) setTimeout(function () { if (window.glitch) window.glitch(g, 650); }, 1700);
     });
   }, { threshold: 0.35 });
   monos.forEach(function (m) { obsMono.observe(m); });

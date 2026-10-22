@@ -56,3 +56,7 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
 - Usługi: pas MONOCHROME (`.mono.mono--uslugi`) — tło `img/uslugi-tlo.jpg` (nieruchomy metal z `metal.py`, t=47)
   i wielkie „USŁUGI” (glitch jak na „WEBDESIGN” — oba napisy mają `data-glitch`). Bez postaci (Dawid: usunąć).
   Lista usług: chromowane ikony 3D z OpenArt (`img/uslugi/`, wycięte maską) + mały numer 01–04. Pozostałe stopklatki z filmu: `zrodla/wideo-klatki/gotowe/`.
+- Rezerwacje vizita.pl mają własną podstronę `rezerwacje.html` (pas MONOCHROME „REZERWACJE”, „Jak to działa” w 3 krokach,
+  demo kalendarza, CTA). Na stronie głównej pod usługami tylko zajawka `.rez-zajawka`; strona główna nie ładuje już embed.js.
+  Wspólna klasa `.chrom-ramka` (czarny lakier, chromowana obręcz, błysk) — ramka usług, zajawka, kroki i panel kalendarza.
+  `script.js` działa na obu stronach (sprawdza, czy są pulpit, dock i taśma konceptów).

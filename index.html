@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400..600&display=swap" rel="stylesheet">
 <script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
-<link rel="stylesheet" href="style.css?v=19">
+<link rel="stylesheet" href="style.css?v=21">
 </head>
 <body id="top">
 
@@ -117,7 +117,7 @@
     <a class="dock__el dock__el--znak" href="#omnie" data-nazwa="Dawid Webdesign">
       <svg class="logo-znak" aria-hidden="true"><use href="#znak"/></svg>
     </a>
-    <a class="dock__el dock__el--chrom" href="#rezerwacje" data-nazwa="Rezerwacje">
+    <a class="dock__el dock__el--chrom" href="rezerwacje.html" data-nazwa="Rezerwacje">
       <img src="img/dock/kalendarz.png" alt="" width="216" height="216">
     </a>
     <span class="dock__kreska" aria-hidden="true"></span>
@@ -280,7 +280,7 @@
   </div>
 
   <div class="wrap" id="zakres">
-    <div class="uslugi">
+    <div class="uslugi chrom-ramka">
       <div class="usluga reveal">
         <img class="usluga__ikona" src="img/uslugi/strony.png" alt="" width="240" height="240" loading="lazy">
         <span class="usluga__nr" aria-hidden="true">01</span>
@@ -324,32 +324,12 @@
       </div>
     </div>
 
-    <div class="rezerwacje" id="rezerwacje">
-      <div class="rezerwacje__tekst">
-        <p class="etykieta reveal">Rezerwacje online</p>
-        <h3 class="podtytul reveal">Klient umawia się sam, <span class="szary">o&nbsp;każdej porze.</span></h3>
-        <p class="wstep reveal">Obok działa prawdziwy kalendarz vizita.pl z&nbsp;gabinetu pokazowego — w&nbsp;kolorach tej strony. Tak samo może działać na&nbsp;Twojej stronie: wybór usługi, godzina, gotowe.</p>
-        <ul class="punkty reveal">
-          <li>Dopasowany do&nbsp;kolorów i&nbsp;kroju strony</li>
-          <li>Bez prowizji od&nbsp;wizyt</li>
-          <li>Mój własny system, więc szybko coś zmienię</li>
-        </ul>
-        <a class="link-strzalka reveal" href="https://vizita.pl" target="_blank" rel="noopener">Więcej na vizita.pl <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-      </div>
-      <div class="rezerwacje__kal reveal">
-        <div id="rezerwacje-widget"></div>
-        <script src="https://vizita.pl/embed.js"
-                data-salon="gabinet-demo"
-                data-accent="#EDEDED"
-                data-bg="#141414"
-                data-text="#F2F2F2"
-                data-radius="12"
-                data-font="Inter, system-ui, sans-serif"
-                data-font-url="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&display=swap"
-                data-target="#rezerwacje-widget"></script>
-        <p class="rezerwacje__nota">Gabinet pokazowy — terminy i&nbsp;usługi są przykładowe.</p>
-      </div>
-    </div>
+    <!-- Rezerwacje vizita.pl mają własną podstronę (rezerwacje.html) — tu tylko zajawka -->
+    <a class="rez-zajawka chrom-ramka reveal" href="rezerwacje.html" id="rezerwacje">
+      <img class="rez-zajawka__ikona" src="img/uslugi/rezerwacje.png" alt="" width="240" height="240" loading="lazy">
+      <span class="rez-zajawka__tekst"><b>Rezerwacje online vizita.pl</b><span>Klient sam wybiera usługę i&nbsp;godzinę — kalendarz wpięty w&nbsp;stronę, bez prowizji od&nbsp;wizyt.</span></span>
+      <span class="link-strzalka">Zobacz, jak to działa <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M14 7l5 5-5 5"/></svg></span>
+    </a>
   </div>
 </section>
 
@@ -436,7 +416,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 <script src="chrom.js?v=10"></script>
 </body>
 </html>

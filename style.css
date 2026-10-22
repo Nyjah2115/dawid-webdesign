@@ -772,12 +772,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 /* ---------- usługi ---------- */
-/* ramka usług w stylu chromowanych ikon: czarny lakier, srebrna wypukła krawędź, połysk i błysk w rogu */
-.uslugi {
+/* chromowana ramka jak ikony: czarny lakier, srebrna wypukła krawędź, połysk i błysk w rogu */
+.chrom-ramka {
   --chrom: conic-gradient(from 215deg, #ffffff, #7e7e7e 11%, #1e1e1e 23%, #ececec 36%, #4c4c4c 50%, #ffffff 62%, #262626 76%, #cfcfcf 89%, #ffffff);
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   border-radius: 30px;
   background:
     linear-gradient(118deg, transparent 18%, rgba(255, 255, 255, .055) 30%, transparent 44%),   /* odbicie na lakierze */
@@ -790,7 +788,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     inset 0 0 0 5px rgba(255, 255, 255, .07),
     0 40px 90px rgba(0, 0, 0, .65);
 }
-.uslugi::before {                                           /* chromowana obręcz */
+.chrom-ramka::before {                                      /* chromowana obręcz */
   content: "";
   position: absolute;
   inset: 0;
@@ -802,7 +800,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
   pointer-events: none;
 }
-.uslugi::after {                                            /* błysk w rogu, jak na ikonach */
+.chrom-ramka::after {                                       /* błysk w rogu, jak na ikonach */
   content: "";
   position: absolute;
   top: -13px; right: 64px;
@@ -811,7 +809,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 14px rgba(255, 255, 255, .6));
   pointer-events: none;
 }
+.uslugi { display: grid; grid-template-columns: repeat(4, 1fr); }
+.uslugi--3 { grid-template-columns: repeat(3, 1fr); }
 .usluga { position: relative; padding: 44px 30px 42px; }
+.usluga__opis { color: var(--szary); font-size: 15px; line-height: 1.55; }
 /* chromowane linie między kolumnami (pionowe) i między rzędami (poziome) */
 .usluga::before, .usluga::after { content: ""; position: absolute; pointer-events: none; opacity: 0; }
 .usluga::before {
@@ -849,14 +850,42 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .usluga:nth-child(n+3)::after { opacity: .55; }
 }
 @media (max-width: 600px) {
-  .uslugi { grid-template-columns: 1fr; border-radius: 24px; }
-  .uslugi::after { right: 36px; }
+  .uslugi, .uslugi--3 { grid-template-columns: 1fr; }
+  .chrom-ramka { border-radius: 24px; }
+  .chrom-ramka::after { right: 36px; }
   .usluga { padding: 34px 24px 32px; }
   .usluga + .usluga::before, .usluga:nth-child(3)::before { opacity: 0; }
   .usluga + .usluga::after { opacity: .55; }
 }
 
+/* ---------- podstrona rezerwacji ---------- */
+.mono--rez { margin-bottom: 0; }
+.mono--rez .mono__slowo { font-size: 10.2vw; }        /* 10 liter — mieści się w szerokości */
+.link-strzalka--wstecz:hover svg { transform: translateX(-4px); }
+.sekcja--jak { padding-top: clamp(100px, 12vw, 160px); }
+.rez-cta { padding-bottom: clamp(110px, 14vw, 180px); }
+@media (max-width: 760px) { .mono--rez .mono__slowo { font-size: 10.2vw; } }
+
 /* ---------- rezerwacje ---------- */
+.rez-zajawka {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-top: clamp(28px, 4vw, 48px);
+  padding: 22px 34px 22px 22px;
+}
+.rez-zajawka__ikona { width: 84px; height: 84px; flex: none; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .6)); transition: transform .7s var(--ease); }
+.rez-zajawka:hover .rez-zajawka__ikona { transform: translateY(-3px) rotate(-5deg); }
+.rez-zajawka__tekst { display: flex; flex-direction: column; gap: 6px; }
+.rez-zajawka__tekst b { font-family: var(--szeroki); font-stretch: 125%; font-weight: 800; font-size: 17px; text-transform: uppercase; }
+.rez-zajawka__tekst span { color: var(--szary); font-size: 15px; }
+.rez-zajawka .link-strzalka { margin-left: auto; white-space: nowrap; }
+@media (max-width: 760px) {
+  .rez-zajawka { flex-wrap: wrap; gap: 16px 18px; padding: 22px; }
+  .rez-zajawka__ikona { width: 64px; height: 64px; }
+  .rez-zajawka__tekst { flex: 1 1 200px; }
+  .rez-zajawka .link-strzalka { margin-left: 0; }
+}
 .rezerwacje {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
@@ -867,13 +896,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .punkty { margin: 28px 0 32px; display: grid; gap: 0; border-top: 1px solid var(--linia); }
 .punkty li { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--linia); font-size: 15px; }
 .punkty li::before { content: "—"; color: var(--ciemny); }
-.rezerwacje__kal {
-  padding: clamp(14px, 2vw, 22px);
-  border-radius: 16px;
-  background: var(--panel);
-  box-shadow: inset 0 0 0 1px var(--linia);
-  min-height: 420px;
-}
+.rezerwacje__kal { padding: clamp(16px, 2vw, 26px); min-height: 420px; }
 /* kalendarz (iframe) dorasta po wczytaniu do ok. 1070 px — miejsce zarezerwowane, żeby strona pod nim nie skakała */
 #rezerwacje-widget { min-height: 1060px; }
 .rezerwacje__nota { margin-top: 14px; text-align: center; font-size: 12px; color: var(--ciemny); }

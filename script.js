@@ -114,10 +114,9 @@
     var vh = window.innerHeight;
     nav.classList.toggle("nav--tlo", window.scrollY > vh * 0.6);
 
-    if (!cichy) {
+    if (!cichy && pulpit) {
       var p = pulpit.getBoundingClientRect();
       pulpit.style.setProperty("--s", ograniczy(-p.top / p.height).toFixed(4));
-
     }
     monos.forEach(function (m) {
       var r = m.getBoundingClientRect();
@@ -191,8 +190,8 @@
 
   /* ---------- dock: powiększanie jak w macOS ---------- */
   var dock = document.getElementById("dock");
-  var dockEl = Array.prototype.slice.call(dock.querySelectorAll(".dock__el"));
-  if (precyzyjny && !cichy) {
+  var dockEl = dock ? Array.prototype.slice.call(dock.querySelectorAll(".dock__el")) : [];
+  if (dock && precyzyjny && !cichy) {
     dock.addEventListener("mousemove", function (e) {
       dockEl.forEach(function (el) {
         var r = el.getBoundingClientRect();
@@ -210,6 +209,7 @@
   var tasma = document.getElementById("tasma");
   var wstecz = document.getElementById("konceptyWstecz");
   var dalej = document.getElementById("konceptyDalej");
+  if (!tasma) return;                                // podstrona bez taśmy konceptów
   function krokTasmy() {
     var el = tasma.querySelector(".koncept");
     return el ? el.getBoundingClientRect().width + 24 : 400;

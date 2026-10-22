@@ -1,0 +1,4 @@
+zrodla/
+.DS_Store
+# nieużywane na stronie (stare zdjęcie do kontaktu, generuje je narzedzia/foto.py)
+img/kontakt.jpg

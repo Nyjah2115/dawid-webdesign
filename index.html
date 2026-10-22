@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pl" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dawid Webdesign — strony internetowe</title>
+<meta name="description" content="Dawid Webdesign — projektuję i koduję strony internetowe dla różnego rodzaju firm, od pierwszego szkicu po rezerwacje online.">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Dawid Webdesign — strony internetowe">
+<meta property="og:description" content="Projekt · kod · rezerwacje online. Strony internetowe dla firm.">
+<meta property="og:image" content="img/omnie.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400..600&display=swap" rel="stylesheet">
+<script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
+<link rel="stylesheet" href="style.css?v=17">
+</head>
+<body id="top">
+
+<!-- Znak Dawid Webdesign: chromowana gwiazda (trzon litery D) + łuk jak orbita (brzuszek D).
+     Gradienty żyją tutaj; połysk przesuwa się powoli po metalu (animateTransform). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="chromLuk" x1="0" y1="0" x2="1" y2="1" spreadMethod="reflect">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".16" stop-color="#d4d4d4"/>
+      <stop offset=".34" stop-color="#2b2b2b"/>
+      <stop offset=".47" stop-color="#f4f4f4"/>
+      <stop offset=".6" stop-color="#8a8a8a"/>
+      <stop offset=".76" stop-color="#1c1c1c"/>
+      <stop offset=".9" stop-color="#c8c8c8"/>
+      <stop offset="1" stop-color="#ffffff"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-.5 -.5; .5 .5; -.5 -.5" dur="7s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="chromGwiazda" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".38" stop-color="#b9b9b9"/>
+      <stop offset=".5" stop-color="#ffffff"/>
+      <stop offset=".62" stop-color="#5e5e5e"/>
+      <stop offset="1" stop-color="#e9e9e9"/>
+    </linearGradient>
+    <linearGradient id="chromTecza" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a8dcff"/>
+      <stop offset=".35" stop-color="#ffffff"/>
+      <stop offset=".65" stop-color="#ffd2a8"/>
+      <stop offset="1" stop-color="#d9c2ff"/>
+    </linearGradient>
+    <symbol id="znak" viewBox="0 0 100 100">
+      <path d="M36 16C67 14 88 30 88 50S67 86 36 84C63 78 78 66 78 50S63 22 36 16Z" fill="url(#chromLuk)"/>
+      <path d="M36 16C67 14 88 30 88 50S67 86 36 84C63 78 78 66 78 50S63 22 36 16Z" fill="none" stroke="url(#chromTecza)" stroke-width=".7" opacity=".7"/>
+      <path d="M36 6Q39.5 46 54 50Q39.5 54 36 94Q32.5 54 18 50Q32.5 46 36 6Z" fill="url(#chromGwiazda)"/>
+      <path d="M36 6Q39.5 46 54 50Q39.5 54 36 94Q32.5 54 18 50Q32.5 46 36 6Z" fill="none" stroke="#fff" stroke-width=".5" opacity=".55"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="ziarno" aria-hidden="true"></div>
+
+<!-- ===== NAWIGACJA ===== -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo"><svg class="logo-znak" aria-hidden="true"><use href="#znak"/></svg>DAWID <span>WEBDESIGN</span></a>
+  <nav class="nav__menu" id="menu" aria-label="Menu główne">
+    <a href="#omnie">O mnie</a>
+    <a href="#realizacje">Realizacje</a>
+    <a href="#koncepty">Koncepty</a>
+    <a href="#uslugi">Usługi</a>
+    <a href="#proces">Proces</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <div class="nav__prawo">
+    <a class="nav__ikona" href="https://www.instagram.com/dawid_webdesign/" target="_blank" rel="noopener" aria-label="Instagram @dawid_webdesign">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle class="pelna" cx="17.3" cy="6.7" r="1.1"/></svg>
+    </a>
+    <a class="nav__ikona" href="https://www.tiktok.com/@dawid_webdesign" target="_blank" rel="noopener" aria-label="TikTok @dawid_webdesign">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="pelna" d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.3 6.3 0 1 0 5.3 6.2V8.6a7.9 7.9 0 0 0 4.4 1.4V6.7a4.6 4.6 0 0 1-4.4-4.7z"/></svg>
+    </a>
+    <button class="nav__kropki" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== HERO: PULPIT ===== -->
+<!-- Rozmyty portret, na nim realizacje jak ikony na pulpicie (można je przeciągać), na dole dock. -->
+<section class="pulpit" id="pulpit">
+  <img class="pulpit__tlo" src="img/profil-rozmyty.jpg" alt="" width="2400" height="1500" fetchpriority="high">
+  <div class="pulpit__cien" aria-hidden="true"></div>
+
+  <div class="pulpit__napis">
+    <h1 class="pulpit__h1"><span class="wejscie">DAWID</span><span class="wejscie">WEBDESIGN</span></h1>
+    <p class="pulpit__lead wejscie">Strony internetowe dla firm — projekt, kod i&nbsp;rezerwacje online.</p>
+  </div>
+
+  <div class="ikony" id="ikony">
+    <a class="ik" style="--x:9%;--y:24%;--mx:14%;--my:17%" href="https://nyjah2115.github.io/lila-med/" target="_blank" rel="noopener"><img src="img/ikony/lila-med.jpg" alt="" width="192" height="192"><span>Lila Med</span></a>
+    <a class="ik" style="--x:20%;--y:13%;--mx:38%;--my:17%" href="https://nyjah2115.github.io/da-zio/" target="_blank" rel="noopener"><img src="img/ikony/da-zio.jpg" alt="" width="192" height="192"><span>Da Zio</span></a>
+    <a class="ik" style="--x:6%;--y:47%;--mx:62%;--my:17%" href="https://nyjah2115.github.io/zaplecione-stw/" target="_blank" rel="noopener"><img src="img/ikony/zaplecione-stw.jpg" alt="" width="192" height="192"><span>Zaplecione</span></a>
+    <a class="ik" style="--x:31%;--y:24%;--mx:86%;--my:17%" href="https://nyjah2115.github.io/lumen-znicze/" target="_blank" rel="noopener"><img src="img/ikony/lumen-znicze.jpg" alt="" width="192" height="192"><span>Tom-Par</span></a>
+    <a class="ik" style="--x:10%;--y:72%;--mx:14%;--my:30%" href="https://nyjah2115.github.io/mp-caffe-catering/" target="_blank" rel="noopener"><img src="img/ikony/mp-caffe-catering.jpg" alt="" width="192" height="192"><span>MP Caffe</span></a>
+    <a class="ik" style="--x:21%;--y:82%;--mx:38%;--my:30%" href="https://nyjah2115.github.io/multitech/" target="_blank" rel="noopener"><img src="img/ikony/multitech.jpg" alt="" width="192" height="192"><span>Multi-Tech</span></a>
+    <a class="ik" style="--x:32%;--y:71%;--mx:62%;--my:30%" href="https://nyjah2115.github.io/dul-trans/" target="_blank" rel="noopener"><img src="img/ikony/dul-trans.jpg" alt="" width="192" height="192"><span>DUL-TRANS</span></a>
+    <a class="ik ik--koncept" style="--x:69%;--y:24%;--mx:86%;--my:30%" href="https://nyjah2115.github.io/vermeil/" target="_blank" rel="noopener"><img src="img/ikony/vermeil.jpg" alt="" width="192" height="192"><span>Vermeil</span></a>
+    <a class="ik ik--koncept" style="--x:80%;--y:13%;--mx:14%;--my:66%" href="https://nyjah2115.github.io/halden/" target="_blank" rel="noopener"><img src="img/ikony/halden.jpg" alt="" width="192" height="192"><span>Halden</span></a>
+    <a class="ik ik--koncept" style="--x:91%;--y:24%;--mx:38%;--my:66%" href="https://nyjah2115.github.io/vela/" target="_blank" rel="noopener"><img src="img/ikony/vela.jpg" alt="" width="192" height="192"><span>Vela</span></a>
+    <a class="ik ik--koncept" style="--x:94%;--y:47%;--mx:62%;--my:66%" href="https://nyjah2115.github.io/solen/" target="_blank" rel="noopener"><img src="img/ikony/solen.jpg" alt="" width="192" height="192"><span>Solen</span></a>
+    <a class="ik ik--koncept" style="--x:90%;--y:72%;--mx:86%;--my:66%" href="https://nyjah2115.github.io/lumo/" target="_blank" rel="noopener"><img src="img/ikony/lumo.jpg" alt="" width="192" height="192"><span>70 m²</span></a>
+    <a class="ik ik--koncept" style="--x:68%;--y:71%;--mx:26%;--my:79%" href="https://nyjah2115.github.io/odnova/" target="_blank" rel="noopener"><img src="img/ikony/odnova.jpg" alt="" width="192" height="192"><span>ODNOVA</span></a>
+    <a class="ik ik--koncept" style="--x:79%;--y:82%;--mx:50%;--my:79%" href="https://nyjah2115.github.io/nula/" target="_blank" rel="noopener"><img src="img/ikony/nula.jpg" alt="" width="192" height="192"><span>VIVRA</span></a>
+    <a class="ik ik--koncept" style="--x:50%;--y:12%;--mx:74%;--my:79%" href="https://nyjah2115.github.io/ciekawa-kawiarnia/" target="_blank" rel="noopener"><img src="img/ikony/ciekawa-kawiarnia.jpg" alt="" width="192" height="192"><span>NOTA</span></a>
+  </div>
+
+  <p class="pulpit__podpowiedz" aria-hidden="true">Przeciągnij ikonę · kliknij, żeby otworzyć stronę</p>
+
+  <!-- dock jak w macOS -->
+  <nav class="dock wejscie" id="dock" aria-label="Skróty">
+    <a class="dock__el dock__el--chrom" href="#realizacje" data-nazwa="Realizacje">
+      <img src="img/dock/folder.png" alt="" width="216" height="216">
+    </a>
+    <a class="dock__el dock__el--znak" href="#omnie" data-nazwa="Dawid Webdesign">
+      <svg class="logo-znak" aria-hidden="true"><use href="#znak"/></svg>
+    </a>
+    <a class="dock__el dock__el--chrom" href="#rezerwacje" data-nazwa="Rezerwacje">
+      <img src="img/dock/kalendarz.png" alt="" width="216" height="216">
+    </a>
+    <span class="dock__kreska" aria-hidden="true"></span>
+    <a class="dock__el dock__el--chrom" href="https://www.instagram.com/dawid_webdesign/" target="_blank" rel="noopener" data-nazwa="Instagram">
+      <img src="img/dock/instagram.png" alt="" width="216" height="216">
+    </a>
+    <a class="dock__el dock__el--chrom" href="https://www.tiktok.com/@dawid_webdesign" target="_blank" rel="noopener" data-nazwa="TikTok">
+      <img src="img/dock/tiktok.png" alt="" width="216" height="216">
+    </a>
+    <a class="dock__el dock__el--chrom" href="mailto:kontakt@vizita.pl" data-nazwa="E-mail">
+      <img src="img/dock/mail.png" alt="" width="216" height="216">
+    </a>
+    <a class="dock__el dock__el--chrom" href="tel:+48504400224" data-nazwa="504 400 224">
+      <img src="img/dock/telefon.png" alt="" width="216" height="216">
+    </a>
+  </nav>
+</section>
+
+<!-- ===== O MNIE — w stylu „MONOCHROME” ===== -->
+<section class="mono" id="omnie">
+  <img class="mono__foto" src="img/omnie.jpg" alt="Dawid — autor strony, czarno-białe zdjęcie" width="2400" height="1350" loading="lazy">
+  <div class="mono__gora">
+    <p class="licznik">001 <span>/ 006</span></p>
+    <p class="etykieta">O mnie</p>
+  </div>
+  <p class="mono__tekst reveal">Nazywam się Dawid, zajmuję się projektowaniem i&nbsp;tworzeniem stron internetowych dla różnego rodzaju firm.</p>
+  <h2 class="mono__slowo" aria-label="Webdesign"><span class="mono__litery" id="monoSlowo" data-glitch>WEBDESIGN</span></h2>
+  <div class="mono__dol">
+    <a class="link-strzalka" href="#realizacje">Zobacz realizacje <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M14 7l5 5-5 5"/></svg></a>
+    <p class="mono__nr">001 <span>/ 006</span></p>
+    <a class="dalej" href="#realizacje"><b>DALEJ</b><span>Realizacje</span>
+      <span class="dalej__kolo"><svg class="dalej__pierscien" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5"/><circle class="postep" id="monoPostep" cx="24" cy="24" r="22.5"/></svg><svg class="dalej__grot" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7l5 5-5 5"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== REALIZACJE ===== -->
+<section class="sekcja" id="realizacje">
+  <div class="wrap">
+    <header class="naglowek naglowek--wskaz">
+      <div>
+        <p class="licznik reveal">002 <span>/ 006</span></p>
+        <h2 class="tytul reveal">Strony dla<br><span class="szary">prawdziwych firm</span></h2>
+        <p class="wstep reveal">Gabinet w&nbsp;Kielcach, pizzeria w&nbsp;Mielcu, warsztat w&nbsp;Stalowej Woli. Każda strona zaprojektowana pod konkretną firmę i&nbsp;jej klientów.</p>
+      </div>
+      <!-- Dawid pokazuje palcem na nagłówek; czarne tło znika dzięki mix-blend-mode: lighten -->
+      <img class="wskaz reveal" src="img/wskazuje.jpg" alt="" width="1200" height="1050" loading="lazy">
+    </header>
+
+    <div class="projekty">
+      <article class="projekt">
+        <a class="projekt__media" href="https://nyjah2115.github.io/lila-med/" target="_blank" rel="noopener" aria-label="Otwórz stronę Lila Med">
+          <figure class="okno"><span class="okno__pasek"><i></i><i></i><i></i></span><img src="img/realizacje/lila-med.jpg" alt="Strona gabinetu Lila Med w Kielcach" loading="lazy" width="1600" height="1000"></figure>
+          <figure class="telefon projekt__telefon"><img src="img/realizacje/lila-med-tel.jpg" alt="" loading="lazy" width="640" height="1385"></figure>
+        </a>
+        <div class="projekt__opis">
+          <p class="projekt__nr">01</p>
+          <h3>Lila Med</h3>
+          <p class="projekt__branza">Kosmetologia i&nbsp;medycyna estetyczna · Kielce</p>
+          <p>Strona gabinetu z&nbsp;opisem zabiegów, zdjęciami z&nbsp;Instagrama dopasowanymi do&nbsp;palety logo i&nbsp;kalendarzem wizyt vizita.pl wpiętym w&nbsp;stronę.</p>
+          <ul class="tagi"><li>Projekt</li><li>Zdjęcia</li><li>Rezerwacje online</li></ul>
+          <a class="link-strzalka" href="https://nyjah2115.github.io/lila-med/" target="_blank" rel="noopener">Otwórz stronę <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
+
+      <article class="projekt">
+        <a class="projekt__media" href="https://nyjah2115.github.io/da-zio/" target="_blank" rel="noopener" aria-label="Otwórz stronę Da Zio">
+          <figure class="okno"><span class="okno__pasek"><i></i><i></i><i></i></span><img src="img/realizacje/da-zio.jpg" alt="Strona pizzerii Da Zio w Mielcu" loading="lazy" width="1600" height="1000"></figure>
+        </a>
+        <div class="projekt__opis">
+          <p class="projekt__nr">02</p>
+          <h3>Da Zio</h3>
+          <p class="projekt__branza">Trattoria i&nbsp;pizzeria · Mielec</p>
+          <p>Pizza z&nbsp;pieca opalanego drewnem: menu, godziny otwarcia i&nbsp;zamówienia online z&nbsp;dowozem albo na&nbsp;odbiór — wszystko z&nbsp;pierwszego ekranu.</p>
+          <ul class="tagi"><li>Projekt</li><li>Menu</li><li>Zamówienia online</li></ul>
+          <a class="link-strzalka" href="https://nyjah2115.github.io/da-zio/" target="_blank" rel="noopener">Otwórz stronę <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
+
+      <article class="projekt">
+        <a class="projekt__media" href="https://nyjah2115.github.io/zaplecione-stw/" target="_blank" rel="noopener" aria-label="Otwórz stronę Zaplecione">
+          <figure class="okno"><span class="okno__pasek"><i></i><i></i><i></i></span><img src="img/realizacje/zaplecione-stw.jpg" alt="Strona salonu fryzjerskiego Zaplecione w Warszawie" loading="lazy" width="1600" height="1000"></figure>
+          <figure class="telefon projekt__telefon"><img src="img/realizacje/zaplecione-tel.jpg" alt="" loading="lazy" width="640" height="1385"></figure>
+        </a>
+        <div class="projekt__opis">
+          <p class="projekt__nr">03</p>
+          <h3>Zaplecione</h3>
+          <p class="projekt__branza">Salon fryzjerski · Warszawa</p>
+          <p>Strona pokazowa salonu: przedłużanie włosów, koloryzacja i&nbsp;regeneracja, metamorfozy „przed i&nbsp;po” i&nbsp;cennik czytelny na&nbsp;telefonie.</p>
+          <ul class="tagi"><li>Strona pokazowa</li><li>Metamorfozy</li><li>Cennik</li></ul>
+          <a class="link-strzalka" href="https://nyjah2115.github.io/zaplecione-stw/" target="_blank" rel="noopener">Otwórz stronę <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
+
+      <article class="projekt">
+        <a class="projekt__media" href="https://nyjah2115.github.io/lumen-znicze/" target="_blank" rel="noopener" aria-label="Otwórz sklep Tom-Par">
+          <figure class="okno"><span class="okno__pasek"><i></i><i></i><i></i></span><img src="img/realizacje/lumen-znicze.jpg" alt="Sklep internetowy ze zniczami Tom-Par" loading="lazy" width="1600" height="1000"></figure>
+        </a>
+        <div class="projekt__opis">
+          <p class="projekt__nr">04</p>
+          <h3>Tom-Par</h3>
+          <p class="projekt__branza">Sklep internetowy ze&nbsp;zniczami</p>
+          <p>Znicze, lampiony i&nbsp;wkłady: katalog z&nbsp;kategoriami i&nbsp;wyszukiwarką, koszyk, jasny i&nbsp;ciemny motyw, wysyłka kurierem i&nbsp;do paczkomatu.</p>
+          <ul class="tagi"><li>Sklep</li><li>Koszyk</li><li>Katalog</li></ul>
+          <a class="link-strzalka" href="https://nyjah2115.github.io/lumen-znicze/" target="_blank" rel="noopener">Otwórz stronę <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
+
+      <article class="projekt">
+        <a class="projekt__media" href="https://nyjah2115.github.io/mp-caffe-catering/" target="_blank" rel="noopener" aria-label="Otwórz stronę MP Caffe Catering">
+          <figure class="okno"><span class="okno__pasek"><i></i><i></i><i></i></span><img src="img/realizacje/mp-caffe-catering.jpg" alt="Strona MP Caffe Catering w Stalowej Woli" loading="lazy" width="1600" height="1000"></figure>
+        </a>
+        <div class="projekt__opis">
+          <p class="projekt__nr">05</p>
+          <h3>MP Caffe Catering</h3>
+          <p class="projekt__branza">Obiady z&nbsp;dowozem · Stalowa Wola</p>
+          <p>Domowe obiady i&nbsp;catering dla firm: menu tygodnia, abonamenty, godziny wydawania i&nbsp;telefon do&nbsp;zamówień od&nbsp;razu na&nbsp;wierzchu.</p>
+          <ul class="tagi"><li>Projekt</li><li>Menu tygodnia</li><li>Catering</li></ul>
+          <a class="link-strzalka" href="https://nyjah2115.github.io/mp-caffe-catering/" target="_blank" rel="noopener">Otwórz stronę <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
+
+      <article class="projekt">
+        <a class="projekt__media" href="https://nyjah2115.github.io/multitech/" target="_blank" rel="noopener" aria-label="Otwórz stronę Multi-Tech">
+          <figure class="okno"><span class="okno__pasek"><i></i><i></i><i></i></span><img src="img/realizacje/multitech.jpg" alt="Strona warsztatu Multi-Tech w Stalowej Woli" loading="lazy" width="1600" height="1000"></figure>
+        </a>
+        <div class="projekt__opis">
+          <p class="projekt__nr">06</p>
+          <h3>Multi-Tech</h3>
+          <p class="projekt__branza">Mechanika samochodowa · Stalowa Wola</p>
+          <p>Warsztat: zakres napraw od&nbsp;hamulców po&nbsp;klimatyzację, zasady współpracy, dojazd i&nbsp;numer telefonu, który zawsze jest pod ręką.</p>
+          <ul class="tagi"><li>Projekt</li><li>Usługi</li><li>Kontakt</li></ul>
+          <a class="link-strzalka" href="https://nyjah2115.github.io/multitech/" target="_blank" rel="noopener">Otwórz stronę <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
+
+      <article class="projekt">
+        <a class="projekt__media" href="https://nyjah2115.github.io/dul-trans/" target="_blank" rel="noopener" aria-label="Otwórz stronę DUL-TRANS">
+          <figure class="okno"><span class="okno__pasek"><i></i><i></i><i></i></span><img src="img/realizacje/dul-trans.jpg" alt="Strona firmy DUL-TRANS z Grębowa" loading="lazy" width="1600" height="1000"></figure>
+        </a>
+        <div class="projekt__opis">
+          <p class="projekt__nr">07</p>
+          <h3>DUL-TRANS</h3>
+          <p class="projekt__branza">Opał, transport i&nbsp;skup złomu · Grębów</p>
+          <p>Rodzinna firma od&nbsp;1992 roku: sprzedaż i&nbsp;dowóz węgla, transport ciężarowy w&nbsp;całej Polsce i&nbsp;skup złomu na&nbsp;jednej, prostej stronie.</p>
+          <ul class="tagi"><li>Projekt</li><li>Wideo w&nbsp;tle</li><li>Usługi</li></ul>
+          <a class="link-strzalka" href="https://nyjah2115.github.io/dul-trans/" target="_blank" rel="noopener">Otwórz stronę <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONCEPTY ===== -->
+<section class="sekcja" id="koncepty">
+  <div class="wrap">
+    <header class="naglowek naglowek--rzad">
+      <div>
+        <p class="licznik reveal">003 <span>/ 006</span></p>
+        <h2 class="tytul reveal">Co jeszcze<br><span class="szary">da się zrobić</span></h2>
+      </div>
+      <div class="naglowek__prawo">
+        <p class="wstep reveal">Strony bez klienta, robione po&nbsp;to, żeby sprawdzić nowe pomysły: animacje sterowane przewijaniem, wideo, model 3D. Marki są fikcyjne, a&nbsp;część grafik i&nbsp;wideo wygenerowała AI.</p>
+        <div class="strzalki reveal">
+          <button class="strzalka" type="button" id="konceptyWstecz" aria-label="Poprzednie koncepty"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 7l-5 5 5 5"/></svg></button>
+          <button class="strzalka" type="button" id="konceptyDalej" aria-label="Następne koncepty"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7l5 5-5 5"/></svg></button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="tasma" id="tasma">
+    <a class="koncept" href="https://nyjah2115.github.io/vermeil/" target="_blank" rel="noopener">
+      <span class="koncept__foto"><img src="img/realizacje/vermeil.jpg" alt="Koncept strony manufaktury zegarków Vermeil" loading="lazy" width="1600" height="1000"></span>
+      <span class="koncept__opis"><b>Vermeil</b><span>Zegarek rozkłada się na&nbsp;19 części, gdy przewijasz stronę.</span></span>
+    </a>
+    <a class="koncept" href="https://nyjah2115.github.io/halden/" target="_blank" rel="noopener">
+      <span class="koncept__foto"><img src="img/realizacje/halden.jpg" alt="Koncept strony produktowej zegarka Halden" loading="lazy" width="1600" height="1000"></span>
+      <span class="koncept__opis"><b>Halden®</b><span>Strona produktowa zegarka: wideo, zbliżenie i&nbsp;obrót 360°.</span></span>
+    </a>
+    <a class="koncept" href="https://nyjah2115.github.io/vela/" target="_blank" rel="noopener">
+      <span class="koncept__foto"><img src="img/realizacje/vela.jpg" alt="Koncept strony produktowej słuchawek Vela" loading="lazy" width="1600" height="1000"></span>
+      <span class="koncept__opis"><b>Vela®</b><span>Słuchawki, które lądują z&nbsp;kadru prosto na&nbsp;czarne tło.</span></span>
+    </a>
+    <a class="koncept" href="https://nyjah2115.github.io/solen/" target="_blank" rel="noopener">
+      <span class="koncept__foto"><img src="img/realizacje/solen.jpg" alt="Koncept strony okularów sportowych Solen" loading="lazy" width="1600" height="1000"></span>
+      <span class="koncept__opis"><b>Solen®</b><span>Optyka sportowa — pierwszy z&nbsp;formatów produktowych.</span></span>
+    </a>
+    <a class="koncept" href="https://nyjah2115.github.io/lumo/" target="_blank" rel="noopener">
+      <span class="koncept__foto"><img src="img/realizacje/lumo.jpg" alt="Koncept strony oferty mieszkania 70 m²" loading="lazy" width="1600" height="1000"></span>
+      <span class="koncept__opis"><b>70&nbsp;m²</b><span>Oferta mieszkania: z&nbsp;salonu kamera wznosi się nad model 3D.</span></span>
+    </a>
+    <a class="koncept" href="https://nyjah2115.github.io/odnova/" target="_blank" rel="noopener">
+      <span class="koncept__foto"><img src="img/realizacje/odnova.jpg" alt="Koncept strony firmy remontowej ODNOVA" loading="lazy" width="1600" height="1000"></span>
+      <span class="koncept__opis"><b>ODNOVA</b><span>Firma remontowa: przejście przez gotowy dom i&nbsp;etapy remontu.</span></span>
+    </a>
+    <a class="koncept" href="https://nyjah2115.github.io/nula/" target="_blank" rel="noopener">
+      <span class="koncept__foto"><img src="img/realizacje/nula.jpg" alt="Koncept strony napoju VIVRA" loading="lazy" width="1600" height="1000"></span>
+      <span class="koncept__opis"><b>VIVRA</b><span>Napój bez cukru: trzy smaki, puszka w&nbsp;ruchu i&nbsp;sklep.</span></span>
+    </a>
+    <a class="koncept" href="https://nyjah2115.github.io/ciekawa-kawiarnia/" target="_blank" rel="noopener">
+      <span class="koncept__foto"><img src="img/realizacje/ciekawa-kawiarnia.jpg" alt="Koncept strony kawiarni NOTA" loading="lazy" width="1600" height="1000"></span>
+      <span class="koncept__opis"><b>NOTA</b><span>Kawiarnia: wideo sterowane przewijaniem i&nbsp;karuzela 3D.</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== USŁUGI ===== -->
+<section class="sekcja sekcja--uslugi" id="uslugi">
+  <!-- Pas w stylu MONOCHROME: nieruchomy metal i wielkie „USŁUGI” z glitchem. -->
+  <div class="mono mono--uslugi">
+    <img class="mono__foto" src="img/uslugi-tlo.jpg" alt="" width="2400" height="1350" loading="lazy">
+    <h2 class="mono__slowo" aria-label="Usługi — wszystko, czego potrzebuje strona"><span class="mono__litery" data-glitch>USŁUGI</span></h2>
+    <div class="mono__gora">
+      <p class="licznik">004 <span>/ 006</span></p>
+      <p class="etykieta">Usługi</p>
+    </div>
+    <div class="mono__tekst reveal">
+      <p class="mono__podtytul">Wszystko, czego potrzebuje strona</p>
+      <p>Jedna osoba od&nbsp;rozmowy aż po&nbsp;start strony. Zakres dobieramy po&nbsp;krótkiej rozmowie o&nbsp;Twojej firmie.</p>
+    </div>
+    <div class="mono__dol">
+      <a class="link-strzalka" href="#zakres">Zobacz zakres <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M7 14l5 5 5-5"/></svg></a>
+      <p class="mono__nr">004 <span>/ 006</span></p>
+      <a class="dalej" href="#proces"><b>DALEJ</b><span>Proces</span>
+        <span class="dalej__kolo"><svg class="dalej__pierscien" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5"/><circle class="postep" cx="24" cy="24" r="22.5"/></svg><svg class="dalej__grot" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7l5 5-5 5"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="wrap" id="zakres">
+    <div class="uslugi">
+      <div class="usluga reveal">
+        <span class="usluga__nr" aria-hidden="true">01</span>
+        <h3>Strony internetowe</h3>
+        <ul>
+          <li><b>Strona-wizytówka</b> kim jesteś, co robisz i&nbsp;jak się umówić</li>
+          <li><b>Menu lub cennik</b> dla restauracji, kawiarni i&nbsp;cateringu</li>
+          <li><b>Sklep internetowy</b> katalog, koszyk i&nbsp;zamówienie</li>
+          <li><b>Strona produktowa</b> animacja i&nbsp;wideo na&nbsp;przewijanie</li>
+        </ul>
+      </div>
+      <div class="usluga reveal">
+        <span class="usluga__nr" aria-hidden="true">02</span>
+        <h3>Rezerwacje online</h3>
+        <ul>
+          <li><b>Kalendarz vizita.pl</b> wpięty w&nbsp;stronę, w&nbsp;jej kolorach</li>
+          <li><b>Panel wizyt</b> wszystko w&nbsp;jednym miejscu, bez zeszytu</li>
+          <li><b>Bez prowizji</b> od&nbsp;żadnej wizyty</li>
+        </ul>
+      </div>
+      <div class="usluga reveal">
+        <span class="usluga__nr" aria-hidden="true">03</span>
+        <h3>Treści i&nbsp;social media</h3>
+        <ul>
+          <li><b>Zdjęcia i&nbsp;grafiki</b> obróbka kadrów z&nbsp;telefonu i&nbsp;Instagrama</li>
+          <li><b>Teksty</b> piszemy razem, bez zmyślonych obietnic</li>
+          <li><b>Rolki i&nbsp;karuzele</b> na&nbsp;Instagram i&nbsp;TikToka</li>
+        </ul>
+      </div>
+      <div class="usluga reveal">
+        <span class="usluga__nr" aria-hidden="true">04</span>
+        <h3>Opieka po&nbsp;starcie</h3>
+        <ul>
+          <li><b>Domena i&nbsp;publikacja</b> strona pod Twoim adresem</li>
+          <li><b>Zmiany</b> nowy cennik, godziny, świeże zdjęcia</li>
+          <li><b>Google</b> tytuły, opisy i&nbsp;dane firmy na&nbsp;miejscu</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rezerwacje" id="rezerwacje">
+      <div class="rezerwacje__tekst">
+        <p class="etykieta reveal">Rezerwacje online</p>
+        <h3 class="podtytul reveal">Klient umawia się sam, <span class="szary">o&nbsp;każdej porze.</span></h3>
+        <p class="wstep reveal">Obok działa prawdziwy kalendarz vizita.pl z&nbsp;gabinetu pokazowego — w&nbsp;kolorach tej strony. Tak samo wpinam go w&nbsp;strony klientów: wybór usługi, godzina, gotowe.</p>
+        <ul class="punkty reveal">
+          <li>Dopasowany do&nbsp;kolorów i&nbsp;kroju strony</li>
+          <li>Bez prowizji od&nbsp;wizyt</li>
+          <li>Mój własny system, więc szybko coś zmienię</li>
+        </ul>
+        <a class="link-strzalka reveal" href="https://vizita.pl" target="_blank" rel="noopener">Więcej na vizita.pl <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      </div>
+      <div class="rezerwacje__kal reveal">
+        <div id="rezerwacje-widget"></div>
+        <script src="https://vizita.pl/embed.js"
+                data-salon="gabinet-demo"
+                data-accent="#EDEDED"
+                data-bg="#141414"
+                data-text="#F2F2F2"
+                data-radius="12"
+                data-font="Inter, system-ui, sans-serif"
+                data-font-url="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&display=swap"
+                data-target="#rezerwacje-widget"></script>
+        <p class="rezerwacje__nota">Gabinet pokazowy — terminy i&nbsp;usługi są przykładowe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHROM — płynny metal (chrom.js) + chromowane dłonie ===== -->
+<section class="chrom" id="chrom" aria-label="Od pomysłu do strony">
+  <canvas class="chrom__plotno" id="chromPlotno" aria-hidden="true"></canvas>
+  <!-- Dwie chromowane dłonie (OpenArt, GPT Image 2), przecięte między palcami.
+       Przy przewijaniu dojeżdżają z boków; gdy prawie się stykają — błysk. -->
+  <div class="dlonie" id="dlonie" aria-hidden="true">
+    <img class="dlon dlon--lewa" src="img/dlon-lewa.webp" alt="" width="849" height="972" loading="lazy">
+    <img class="dlon dlon--prawa" src="img/dlon-prawa.webp" alt="" width="878" height="972" loading="lazy">
+    <span class="dlonie__blysk"><svg viewBox="0 0 40 40"><path d="M20 0Q21.6 18.4 40 20Q21.6 21.6 20 40Q18.4 21.6 0 20Q18.4 18.4 20 0Z" fill="#fff"/></svg></span>
+  </div>
+  <div class="chrom__tresc">
+    <p class="etykieta reveal">Projekt · kod · ruch</p>
+    <h2 class="chrom__h2 reveal"><span>Od pomysłu</span><span>do strony</span></h2>
+    <a class="link-strzalka reveal" href="#proces">Zobacz, jak pracuję <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M7 14l5 5 5-5"/></svg></a>
+  </div>
+</section>
+
+<!-- ===== PROCES ===== -->
+<section class="sekcja" id="proces">
+  <div class="wrap proces">
+    <div class="proces__lewo">
+      <p class="licznik reveal">005 <span>/ 006</span></p>
+      <h2 class="tytul reveal">Od rozmowy<br><span class="szary">do startu</span></h2>
+      <p class="wstep reveal">Sześć kroków, bez żargonu. Na każdym etapie wiesz, co się dzieje i&nbsp;co będzie dalej.</p>
+    </div>
+    <ol class="kroki" id="kroki">
+      <li class="krok"><span class="krok__nr">01</span><div><h3>Rozmowa</h3><p>Dzwonisz albo piszesz. Opowiadasz, czym się zajmujesz, kto do&nbsp;Ciebie przychodzi i&nbsp;co strona ma załatwić.</p></div></li>
+      <li class="krok"><span class="krok__nr">02</span><div><h3>Materiały</h3><p>Zbieramy logo, zdjęcia i&nbsp;teksty. Nie masz zdjęć? Często wystarczy Instagram — kadry obrabiam pod stronę.</p></div></li>
+      <li class="krok"><span class="krok__nr">03</span><div><h3>Projekt</h3><p>Pokazuję pierwszą wersję w&nbsp;przeglądarce, na&nbsp;komputerze i&nbsp;w telefonie — od&nbsp;razu widzisz, jak to będzie wyglądać.</p></div></li>
+      <li class="krok"><span class="krok__nr">04</span><div><h3>Poprawki</h3><p>Zmieniamy to, co ma być inaczej: kolory, kolejność sekcji, teksty — aż strona będzie Twoja.</p></div></li>
+      <li class="krok"><span class="krok__nr">05</span><div><h3>Start</h3><p>Podpinam domenę, publikuję stronę i&nbsp;— jeśli chcesz — uruchamiam rezerwacje online.</p></div></li>
+      <li class="krok"><span class="krok__nr">06</span><div><h3>Opieka</h3><p>Po starcie nadal jestem pod telefonem: nowy cennik, inne godziny, zdjęcia z&nbsp;ostatnich realizacji.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="kontakt" id="kontakt">
+  <div class="wrap kontakt__tresc">
+    <p class="licznik reveal">006 <span>/ 006</span></p>
+    <h2 class="kontakt__h2 reveal">Porozmawiajmy<br><span class="szary">o&nbsp;cenie</span></h2>
+    <p class="wstep reveal">Każda strona jest inna, więc cenę ustalamy po krótkiej rozmowie. Napisz w&nbsp;kilku zdaniach, czym się zajmujesz i&nbsp;czy masz już stronę — odezwę się z&nbsp;pytaniami i&nbsp;wyceną.</p>
+    <div class="kontakt__cta reveal">
+      <a class="btn" href="mailto:kontakt@vizita.pl">Napisz e-mail</a>
+      <a class="btn btn--obrys" href="https://www.instagram.com/dawid_webdesign/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle class="pelna" cx="17.3" cy="6.7" r="1.1"/></svg>Instagram
+      </a>
+      <a class="btn btn--obrys" href="https://www.tiktok.com/@dawid_webdesign" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="pelna" d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.3 6.3 0 1 0 5.3 6.2V8.6a7.9 7.9 0 0 0 4.4 1.4V6.7a4.6 4.6 0 0 1-4.4-4.7z"/></svg>TikTok
+      </a>
+    </div>
+    <ul class="na-start reveal" aria-label="Na start przyda się">
+      <li><span>Logo</span>jeśli już jest</li>
+      <li><span>Zdjęcia</span>wystarczą z&nbsp;telefonu</li>
+      <li><span>Teksty</span>napiszemy razem</li>
+    </ul>
+  </div>
+
+  <!-- Dawid siedzi na wielkim numerze telefonu: nogi chowają się za cyframi, siedzisko na ich górnej krawędzi. -->
+  <a class="kontakt__scena" href="tel:+48504400224" aria-label="Zadzwoń: 504 400 224">
+    <img class="kontakt__siedzi" src="img/siedzi.webp" alt="" width="798" height="944" loading="lazy">
+    <span class="kontakt__numer" aria-hidden="true">504 400 224</span>
+  </a>
+</section>
+
+</main>
+
+<!-- ===== STOPKA ===== -->
+<footer class="stopka">
+  <div class="wrap stopka__rzad">
+    <a href="#top" class="nav__logo"><svg class="logo-znak" aria-hidden="true"><use href="#znak"/></svg>DAWID <span>WEBDESIGN</span></a>
+    <nav class="stopka__linki" aria-label="Kontakt">
+      <a href="tel:+48504400224">504 400 224</a>
+      <a href="mailto:kontakt@vizita.pl">kontakt@vizita.pl</a>
+      <a href="https://www.instagram.com/dawid_webdesign/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@dawid_webdesign" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://vizita.pl" target="_blank" rel="noopener">vizita.pl</a>
+    </nav>
+  </div>
+  <p class="wrap stopka__dol">Dawid Webdesign · strony internetowe i&nbsp;rezerwacje online</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="script.js?v=6"></script>
+<script src="chrom.js?v=10"></script>
+</body>
+</html>

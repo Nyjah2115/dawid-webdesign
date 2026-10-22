@@ -1138,6 +1138,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .omnie-kim { grid-template-columns: 1fr; }
 }
 
+/* wstęp O mnie: wycięta postać (selfie w lustrze) stoi po prawej, dół rozpływa się w tło */
+.omnie-hero__foto--wyciete {
+  width: auto; height: 88%;
+  top: auto; bottom: 0; right: 8%;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(to top, transparent, #000 25%);
+  mask-image: linear-gradient(to top, transparent, #000 25%);
+}
+@media (max-width: 760px) {
+  .omnie-hero__foto--wyciete { width: auto; height: 58%; top: 70px; bottom: auto; right: 50%; translate: 50% 0; }
+}
+
 /* =========================================================
    PODSTRONA NAPISZ (napisz.html) — formularz przez formsubmit.co
    ========================================================= */

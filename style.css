@@ -1138,6 +1138,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .omnie-kim { grid-template-columns: 1fr; }
 }
 
+/* wstęp O mnie: w tle płynny metal (jak pas USŁUGI), z lewej przygaszony pod tekst */
+.omnie-hero__tlo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 50%;
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, .4), #000 55%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, .4), #000 55%);
+}
+@media (max-width: 760px) {
+  .omnie-hero__tlo { -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, .35), #000 55%); mask-image: linear-gradient(to top, rgba(0, 0, 0, .35), #000 55%); }
+}
 /* wstęp O mnie: wycięta postać (selfie w lustrze) stoi po prawej, dół rozpływa się w tło */
 .omnie-hero__foto--wyciete {
   width: auto; height: 88%;

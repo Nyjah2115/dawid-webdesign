@@ -58,10 +58,9 @@
   }, { rootMargin: "-45% 0px -50% 0px" });
   sekcje.forEach(function (s) { if (s) obsMenu.observe(s); });
 
-  /* ---------- wielkie napisy MONOCHROME („WEBDESIGN”, „USŁUGI”) rozbite na litery ---------- */
-  var slowa = Array.prototype.slice.call(document.querySelectorAll("[data-glitch]"));
+  /* ---------- wielkie napisy MONOCHROME („WEBDESIGN”, „REZERWACJE”) rozbite na litery ---------- */
+  var slowa = Array.prototype.slice.call(document.querySelectorAll("[data-litery]"));
   slowa.forEach(function (sl) {
-    sl.setAttribute("data-tekst", sl.textContent);     // kopie do glitcha (::before / ::after)
     sl.innerHTML = sl.textContent.split("").map(function (z, i) {
       return '<span class="l" style="--i:' + i + '">' + z + "</span>";
     }).join("");
@@ -83,31 +82,9 @@
       if (!w.isIntersecting) return;
       w.target.classList.add("widac");
       obsMono.unobserve(w.target);
-      // nowy glitch: pierwszy wybuch zaraz po tym, jak litery wjadą
-      var g = w.target.querySelector(".mono__litery.glitch");
-      if (g) setTimeout(function () { if (window.glitch) window.glitch(g, 650); }, 1700);
     });
   }, { threshold: 0.35 });
   monos.forEach(function (m) { obsMono.observe(m); });
-
-  /* glitch: co kilka sekund napis na ułamek sekundy rwie się na plastry (każdy napis we własnym rytmie) */
-  function glitch(sl) {
-    var pas = sl.closest(".mono");
-    function raz() {
-      sl.classList.remove("rwie");
-      void sl.offsetWidth;                           // restart animacji
-      sl.classList.add("rwie");
-      setTimeout(function () { sl.classList.remove("rwie"); }, 480);
-    }
-    if (!document.hidden && pas.classList.contains("widac")) {
-      raz();
-      if (Math.random() < .35) setTimeout(raz, 620); // czasem krótka „dogrywka”
-    }
-    setTimeout(function () { glitch(sl); }, 3200 + Math.random() * 3800);
-  }
-  // „WEBDESIGN” w O mnie ma nowy glitch (glitch.js) — stary rytm tylko dla pozostałych napisów
-  var stare = slowa.filter(function (sl) { return !sl.classList.contains("glitch"); });
-  if (!cichy) stare.forEach(function (sl, i) { setTimeout(function () { glitch(sl); }, 2800 + i * 1300); });
 
   /* ---------- przewijanie: tło, monochrome, kroki ---------- */
   var pulpit = document.getElementById("pulpit");

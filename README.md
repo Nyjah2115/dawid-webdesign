@@ -51,12 +51,8 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   Cen nie podajemy — wycena po rozmowie.
 - „O mnie”: za Dawidem nieruchomy płynny metal, wypalony w `img/omnie.jpg` przez `narzedzia/metal.py`
   (ten sam wzór co shader w `chrom.js`, przeniesiony do numpy; kadr t=72, przygaszony do 60%) — zero kosztu na stronie.
-- Glitch na „WEBDESIGN” w O mnie: `glitch.css` + `glitch.js` (kopia z `../glitch-napis/`, tam demo i instrukcja).
-  Losowe wycinki co 1,8–4 s, pierwszy zaraz po wejściu liter (`script.js`, obserwator `.mono`), nie wcześniej (`.mono.widac`).
-  Napis jest półprzezroczysty, więc wycinki są jasne i pełne (bez `difference`), `--glitch-sila: 1.6` — słabszy ginął na zdjęciu. Hero „DAWID WEBDESIGN” celowo BEZ efektu (Dawid, 2026-10-22).
-- Stary glitch już tylko na „REZERWACJE” (rezerwacje.html): `::before`/`::after` z `data-tekst` (biała i czarna kopia — bez koloru) cięte
-  `clip-path` na plastry; `script.js` dodaje klasę `.rwie` co 3,2–7 s (czasem dwa razy pod rząd), pomija napisy z `.glitch`.
-  Wyłączony przy ograniczonym ruchu.
+- Bez glitchy (Dawid, 2026-10-22: „pousuwaj te animacje glitch wszystkie”). Wielkie „WEBDESIGN” i „REZERWACJE” tylko
+  wjeżdżają literami (`data-litery` → `script.js` rozbija na `.l`). Gotowy efekt glitch leży osobno w `../glitch-napis/`.
 - Usługi: pas MONOCHROME (`.mono.mono--uslugi`) — tło `img/uslugi-tlo.jpg` (nieruchomy metal z `metal.py`, t=47)
   i wielkie chromowane „USŁUGI” — obraz `img/uslugi-chrom.webp` (+ `-1200`), bez animacji. Wygenerowany w OpenArt
   (Nano Banana 2.1, 2K, styl Y2K liquid chrome z iskrami wg wzorów Dawida; oryginał `zrodla/openart/uslugi-chrom/`),

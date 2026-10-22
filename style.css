@@ -532,46 +532,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   pointer-events: none;
 }
 .mono__litery { display: inline-block; position: relative; }
-/* glitch: biała i czarna kopia napisu, cięte na poziome plastry i przesuwane na boki — bez koloru */
-.mono__litery:not(.glitch)::before, .mono__litery:not(.glitch)::after {
-  content: attr(data-tekst);
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-.mono__litery:not(.glitch)::before { color: rgba(255, 255, 255, .78); }   /* jasne plastry */
-.mono__litery:not(.glitch)::after { color: var(--bg); }                    /* czarne plastry wycinają kawałki napisu */
-/* nowy glitch (glitch.js) na „WEBDESIGN” w O mnie: napis jest półprzezroczysty, więc wycinki są jasne i pełne,
-   a przesunięcia mocniejsze — inaczej efekt ginie na zdjęciu */
-.mono__litery.glitch { --glitch-kolor: rgba(235, 235, 235, .92); --glitch-sila: 1.6; }
-.mono__litery.glitch::before { color: rgba(240, 240, 240, .9); mix-blend-mode: normal; }
-.mono:not(.widac) .mono__litery.glitch::before, .mono:not(.widac) .mono__litery.glitch::after { display: none; }   /* nie przed wejściem liter */
-.mono__litery.rwie { animation: drgnij .46s steps(1) both; }
-.mono__litery.rwie::before { animation: glitchA .46s steps(1) both; }
-.mono__litery.rwie::after { animation: glitchB .46s steps(1) both; }
-@keyframes drgnij {
-  0% { translate: .35vw 0; } 20% { translate: -.5vw 0; } 40% { translate: .2vw 0; }
-  60% { translate: -.25vw 0; } 80% { translate: .1vw 0; } 100% { translate: 0 0; }
-}
-@keyframes glitchA {
-  0% { opacity: 1; clip-path: inset(8% 0 72% 0); transform: translateX(-1.3vw); }
-  17% { clip-path: inset(52% 0 26% 0); transform: translateX(1vw); }
-  34% { clip-path: inset(30% 0 55% 0); transform: translateX(-.7vw); }
-  51% { clip-path: inset(74% 0 6% 0); transform: translateX(1.5vw); }
-  68% { clip-path: inset(0 0 86% 0); transform: translateX(-.5vw); }
-  85% { clip-path: inset(44% 0 40% 0); transform: translateX(.8vw); }
-  100% { opacity: 0; clip-path: inset(50% 0 50% 0); transform: none; }
-}
-@keyframes glitchB {
-  0% { opacity: 1; clip-path: inset(62% 0 14% 0); transform: translateX(1.1vw); }
-  17% { clip-path: inset(14% 0 66% 0); transform: translateX(-1.4vw); }
-  34% { clip-path: inset(80% 0 2% 0); transform: translateX(.6vw); }
-  51% { clip-path: inset(36% 0 46% 0); transform: translateX(-1vw); }
-  68% { clip-path: inset(58% 0 22% 0); transform: translateX(1.3vw); }
-  85% { clip-path: inset(4% 0 80% 0); transform: translateX(-.6vw); }
-  100% { opacity: 0; clip-path: inset(50% 0 50% 0); transform: none; }
-}
 .mono__litery .l { display: inline-block; }
 .js .mono__litery .l { transform: translateY(60%); opacity: 0; }
 .mono.widac .mono__litery .l {

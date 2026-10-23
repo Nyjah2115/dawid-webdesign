@@ -1060,7 +1060,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .kontakt__scena:hover .kontakt__siedzi { transform: translateY(-4px); }
 @media (max-width: 760px) {
   .kontakt__h2 { font-size: 7.3vw; }   /* „POROZMAWIAJMY” mieści się w szerokości telefonu */
-  .kontakt__scena { --h: 120vw; margin-top: calc(var(--h) * .7); }
+  .kontakt__scena { --h: 120vw; margin-top: calc(var(--h) * .7 + 40px); }   /* odstęp od przycisków — głowa ich nie dotyka */
   .kontakt__numer { font-size: 11.6vw; }
   .kontakt__siedzi { right: -24%; }
 }
@@ -1347,6 +1347,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (max-width: 760px) {
   .ik img { border-radius: 7px; }
   .ik span { padding: 2px 5px; }
+}
+
+/* telefon: przyciski kontaktu w równych rzędach, stopka jako rząd okrągłych ikon */
+@media (max-width: 600px) {
+  .kontakt__cta { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .kontakt .kontakt__cta { grid-template-columns: 1fr 1fr; }          /* Napisz e-mail na całą szerokość, IG i TikTok po połowie */
+  .kontakt .kontakt__cta > .btn:first-child { grid-column: 1 / -1; }
+  .kontakt__cta .btn { width: 100%; padding: 0 16px; }
+  .stopka__rzad { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .stopka__linki { gap: 12px; }
+  .stopka__linki a { width: 50px; height: 50px; padding: 0; justify-content: center; font-size: 0; }   /* sam znak; tekst zostaje dla czytników */
+  .stopka__linki .ikona-chrom { width: 26px; height: 26px; }
 }
 
 /* =========================================================

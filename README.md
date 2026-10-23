@@ -30,7 +30,7 @@ Wychodzą: `img/omnie.jpg` (lustro, O mnie), `img/hero-glowa.jpg` (hero: głowa 
   ŻADNA strona nie była zamówiona ani sprzedana — nie pisać o „klientach”, „realizacjach” ani „prawdziwych firmach”; zrzuty 1600×1000 w `img/realizacje/`,
   kwadratowe ikony 192 px do pulpitu w `img/ikony/`.
 - Pozycje ikon na pulpicie: `--x/--y` (komputer, luźno wokół napisu) i `--mx/--my` (telefon, siatka 4 kolumn).
-- Każdy projekt ma etykietę „Projekt pokazowy”.
+- Pod projektami nie ma już pigułek („Projekt pokazowy”, „Zdjęcia”…) — Dawid kazał usunąć (2026-10-23); że to projekty pokazowe, mówi wstęp sekcji.
 
 ## Kontakt
 

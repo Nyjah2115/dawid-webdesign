@@ -660,8 +660,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .projekt h3 { font-size: clamp(26px, 2.9vw, 42px); line-height: 1; font-weight: 800; text-transform: uppercase; }
 .projekt__branza { margin-top: 12px; color: var(--szary); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .projekt__opis > p:not([class]) { margin-top: 22px; color: var(--jasny); font-size: 16px; line-height: 1.6; max-width: 30em; }
-.tagi { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 28px; }
-.tagi li { padding: 5px 12px; border-radius: 999px; font-size: 12px; color: var(--szary); box-shadow: inset 0 0 0 1px var(--linia-2); }
+.projekt__opis > .link-strzalka { margin-top: 28px; }
 
 .js .projekt .projekt__media { opacity: 0; transform: translateY(60px) scale(.95); }
 .js .projekt .projekt__opis > * { opacity: 0; transform: translateY(26px); }
@@ -1012,9 +1011,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .kontakt__tresc .wstep { max-width: 30em; }
 .kontakt__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
-.na-start { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
-.na-start li { padding: 8px 15px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--linia-2); font-size: 13px; color: var(--szary); }
-.na-start span { color: var(--tekst); font-weight: 600; margin-right: 6px; }
 
 /* scena: --h = wysokość postaci; siedzisko leży na 80% wysokości zdjęcia */
 .kontakt__scena {

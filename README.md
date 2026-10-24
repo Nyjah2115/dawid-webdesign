@@ -71,7 +71,9 @@ TikTok: też @dawid_webdesign — **niepotwierdzone**, sprawdzić, czy taki prof
   (Nano Banana 2.1, 2K, styl Y2K liquid chrome z iskrami wg wzorów Dawida; oryginał `zrodla/openart/uslugi-chrom/`),
   wycięty z czarnego tła: tło = czerń połączona z krawędzią obrazu, poświata iskier zostaje jako biel z alfą.
   Rozmiar w jednostkach `cq` pasa (`min(84cqw, 86cqh)`), dół `max(12%, 100px)` — nie wchodzi na opis ani pasek na dole. Bez postaci (Dawid: usunąć).
-  Lista usług: chromowane ikony 3D z OpenArt (`img/uslugi/`, wycięte maską) + mały numer 01–04. Pozostałe stopklatki z filmu: `zrodla/wideo-klatki/gotowe/`.
+  Lista usług: 3 karty (`.uslugi--3`) — Strony internetowe, Rezerwacje online, Opieka po starcie — chromowane ikony 3D
+  z OpenArt (`img/uslugi/`, wycięte maską) + mały numer 01–03. „Treści i social media” usunięte 2026-10-24
+  (także z formularza na `napisz.html`). Na tablecie trzecia karta na całą szerokość. Pozostałe stopklatki z filmu: `zrodla/wideo-klatki/gotowe/`.
 - Podstrona `o-mnie.html` (link „Więcej o mnie” z chromowaną ikoną profilu `img/uslugi/o-mnie.png` — OpenArt Nano Banana 2,
   image2image na wzór ikon folderu, maila i tarczy; w dolnym pasku sekcji O mnie, w miejscu licznika 001/006; na telefonie zamiast
   „Zobacz projekty”): wstęp z selfie w lustrze `img/o-mnie-lustro.webp` (wycięte z tła, cz.-b. z ziarnem, z `zrodla/foto/omnie-nowe/`), „Kim jestem”, „Jak pracuję” (4 zasady w `.chrom-ramka`) i CTA.

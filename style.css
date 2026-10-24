@@ -837,9 +837,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .uslugi { grid-template-columns: 1fr 1fr; }
   .usluga:nth-child(3)::before { opacity: 0; }
   .usluga:nth-child(n+3)::after { opacity: .55; }
+  /* przy 3 kartach trzecia nie zostaje sama z pustą połową obok */
+  .uslugi--3 .usluga:nth-child(3) { grid-column: 1 / -1; }
+  .uslugi--3 .usluga:nth-child(3) ul { columns: 2; column-gap: 30px; }
+  .uslugi--3 .usluga:nth-child(3) li { break-inside: avoid; }
 }
 @media (max-width: 600px) {
   .uslugi, .uslugi--3 { grid-template-columns: 1fr; }
+  .uslugi--3 .usluga:nth-child(3) ul { columns: auto; }
   .chrom-ramka { border-radius: 24px; }
   .chrom-ramka::after { right: 36px; }
   .usluga { padding: 34px 24px 32px; }

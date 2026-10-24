@@ -1362,7 +1362,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .kontakt__cta .btn { width: 100%; padding: 0 16px; }
   .stopka__rzad { flex-direction: column; align-items: flex-start; gap: 20px; }
   .stopka__linki { gap: 12px; }
-  .stopka__linki a { width: 50px; height: 50px; padding: 0; justify-content: center; font-size: 0; }   /* sam znak; tekst zostaje dla czytników */
+  .stopka__linki a { width: 50px; height: 50px; padding: 0; gap: 0; justify-content: center; font-size: 0; }   /* sam znak; tekst zostaje dla czytników (gap 0 — inaczej ikona ucieka 4 px w lewo) */
   .stopka__linki .ikona-chrom { width: 26px; height: 26px; }
 }
 
